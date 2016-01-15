@@ -8,13 +8,11 @@
  */
 ?>
 
-	</div><!-- #content -->
-
 	<footer class="footer" role="contentinfo">
 		<div class="site-info">
 			&copy; <?php the_time('Y'); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+		</div>
+	</footer>
 
 <?php wp_footer(); ?>
 
