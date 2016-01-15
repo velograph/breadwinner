@@ -51,6 +51,8 @@ function breadwinner_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'breadwinnercycles' ),
+		'mobile' => __( 'Mobile Menu', 'breadwinnercycles' ),
+		'utility' => __( 'Utility Menu', 'breadwinnercycles' ),
 	) );
 
 	/*
