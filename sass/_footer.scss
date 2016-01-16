@@ -1,3 +1,88 @@
+body {
+	#sb_instagram {
+		padding-bottom: 0 !important;
+		#sbi_images {
+			padding: 0 !important;
+			.sbi_item {
+				padding: 0 !important;
+			}
+		}
+	}
+}
+
 .footer {
-	
+	background: $dark_blue;
+	color: $white;
+	padding: $fifty 0;
+	svg {
+		path {
+			fill: $white;
+		}
+	}
+	a {
+		color: $white;
+	}
+	h6 {
+		margin-bottom: $ten;
+	}
+	li {
+		margin-bottom: $ten;
+	}
+	.inner-container {
+		@include outer-container;
+		.footer-logo {
+			@include span-columns(8);
+			@include shift(2);
+			@include media( $large-screen ) {
+				@include span-columns(2);
+				@include shift(0);
+			}
+			svg {
+				padding: $fifteen 0;
+			}
+		}
+		.page-navigation {
+			@include span-columns(4);
+			@include shift(2);
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				@include span-columns(2);
+				@include shift(1);
+				margin-bottom: 0;
+			}
+		}
+		.utility-navigation {
+			@include span-columns(6);
+			@include shift(2);
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				@include shift(0);
+				margin-bottom: 0;
+			}
+		}
+		.social-media {
+			@include span-columns(6);
+			@include shift(2);
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				@include shift(0);
+			}
+			.social-media-link {
+				@include span-columns(4);
+				@include media( $large-screen ) {
+					@include span-columns(2);
+				}
+				svg {
+					width: $twentyfive;
+				}
+			}
+		}
+	}
+}
+.copyright {
+	background: $orange;
+	color: $white;
+	padding: $ten 0;
+	text-align: center;
 }

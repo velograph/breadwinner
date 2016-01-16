@@ -95,6 +95,9 @@
 						color: $white;
 						font-weight: 700;
 						text-transform: uppercase;
+						&:hover {
+							color: $dark_blue;
+						}
 					}
 				}
 			}
