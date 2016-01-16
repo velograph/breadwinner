@@ -19,3 +19,83 @@
 
 @import "variables";
 @import "slick";
+@import "header";
+@import "footer";
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $news-gothic;
+	height: 100%;
+	select {
+		border-color: $black;
+		color: $black;
+		height: $twentyfive;
+		width: 100%;
+	}
+	.skip-link {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute;
+		text-indent: -9999px;
+	}
+	a {
+		color: $black;
+		&:hover {
+			color: $black;
+		}
+		@include media( $large-screen ) {
+			&:visited {
+				color: $black;
+			}
+		}
+	}
+	button {
+		font-size: 20px;
+	}
+	.button,
+	.search-submit,
+	.wc-proceed-to-checkout a {
+		background: $black;
+		border-radius: 0;
+		color: $white;
+		font-size: 14px;
+		font-weight: 400;
+		padding: $ten $fifteen;
+		text-transform: uppercase;
+		@include transition(background .2s ease-in-out);
+		&:hover {
+			background: $black;
+		}
+	}
+	.woocommerce-info {
+		background: $black;
+		a {
+			color: $white;
+		}
+	}
+	.woocommerce-message {
+		background: $black;
+	}
+	.woocommerce-info,
+	.woocommerce-message {
+		color: $white;
+		text-align: center;
+		.inner-container {
+			@include outer-container;
+			font-size: $h4-font-size;
+			font-weight: 400;
+			padding: $ten 0;
+			text-align: center;
+			.button {
+				background: transparent;
+				color: $white;
+				font-size: $h3-font-size;
+				font-weight: 700;
+			}
+		}
+	}
+}

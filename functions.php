@@ -167,3 +167,18 @@ function my_login_logo_url_title() {
     return 'Work Hard Ride Home';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+/**
+ * TypeKit Fonts
+ */
+function theme_typekit() {
+    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/vlh6wei.js');
+}
+add_action( 'wp_enqueue_scripts', 'theme_typekit' );
+
+function theme_typekit_inline() {
+  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
+  	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php }
+}
+add_action( 'wp_head', 'theme_typekit_inline' );

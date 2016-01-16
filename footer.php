@@ -8,7 +8,7 @@
  */
 ?>
 
-	<footer class="footer" role="contentinfo">
+	<footer class="footer">
 		<div class="site-info">
 			&copy; <?php the_time('Y'); ?>
 		</div>

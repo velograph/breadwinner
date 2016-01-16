@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Single-Bike" sketch:type="MSArtboardGroup" transform="translate(-1322.000000, -26.000000)" fill="#FFFFFF">
+            <g id="Header" sketch:type="MSLayerGroup">
+                <g id="utility" transform="translate(1282.000000, 26.000000)" sketch:type="MSShapeGroup">
+                    <path d="M46.725,1.93558987 C45.709,2.69158987 45.436,3.88858987 45.486,4.52558987 C45.55,5.30458987 45.708,6.31858987 45.708,6.31858987 C45.708,6.31858987 45.395,6.48858987 45.395,7.17258987 C45.504,8.88958987 46.078,8.14858987 46.196,8.90158987 C46.48,10.7155899 47.129,10.3925899 47.129,11.3825899 C47.129,13.0315899 46.449,13.8025899 44.326,14.7165899 C42.196,15.6345899 40,16.7895899 40,18.7895899 L40,19.7895899 L58,19.7895899 L58,18.7895899 C58,16.7895899 55.803,15.6345899 53.672,14.7175899 C51.549,13.8035899 50.871,13.0335899 50.871,11.3835899 C50.871,10.3935899 51.518,10.7165899 51.803,8.90258987 C51.922,8.14958987 52.495,8.89058987 52.606,7.17358987 C52.606,6.48958987 52.292,6.31958987 52.292,6.31958987 C52.292,6.31958987 52.45,5.30558987 52.513,4.52658987 C52.578,3.70958987 52.115,1.96558987 50.213,1.43058987 C49.88,1.09058987 49.655,0.549589869 50.679,0.0065898687 C48.439,-0.0984101313 47.918,1.07358987 46.725,1.93558987 L46.725,1.93558987 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

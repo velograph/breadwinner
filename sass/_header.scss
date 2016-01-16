@@ -1,0 +1,146 @@
+.header {
+	background: $light_blue;
+	svg {
+		path {
+			@include transition(fill .3s ease-in-out);
+			fill: $white;
+		}
+	}
+	.logo-main-navigation {
+		@include outer-container;
+		.site-logo {
+			@include span-columns(6);
+			@include shift(3);
+			padding-bottom: $twentyfive;
+			padding-top: $twentyfive;
+			text-align: center;
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				@include shift(0);
+				padding-bottom: 1.5%;
+				padding-top: 1.5%;
+			}
+			svg {
+				&:hover {
+					path {
+						fill: $dark_blue;
+					}
+				}
+			}
+		}
+		.mobile-menu-trigger {
+			clear: both;
+			color: $white;
+			font-weight: 700;
+			text-align: center;
+			@include media( $large-screen ) {
+				display: none;
+			}
+		}
+		.slide-out {
+			clear: both;
+			display: none;
+			svg {
+				width: $twenty;
+			}
+			.mobile-navigation {
+				@include span-columns(3);
+				@include shift(3);
+				li {
+					margin-bottom: $five;
+				}
+			}
+			.utility-links {
+				@include span-columns(3);
+				text-align: right;
+				div {
+					margin-bottom: $five;
+				}
+				.cart-link {
+					svg {
+						vertical-align: text-top;
+					}
+				}
+			}
+			.mobile-search-form {
+				@include span-columns(6);
+				@include shift(3);
+				padding: $twenty 0;
+				input {
+					border: none;
+					font-size: 12px;
+					font-style: italic;
+					height: $thirty;
+
+				}
+			}
+			a {
+				color: $white;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+		.main-navigation {
+			@include span-columns(9);
+			padding-top: 1%;
+			.menu {
+				display: none;
+				@include media( $large-screen ) {
+					display: block;
+				}
+				.menu-item {
+					display: inline-block;
+					padding: 3%;
+					a {
+						color: $white;
+						font-weight: 700;
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+	.utility-navigation {
+		display: none;
+		position: absolute;
+		right: 0;
+		top: $twenty;
+		@include media( $large-screen ) {
+			display: block;
+		}
+		svg {
+			width: $twenty;
+		}
+		.utility-link {
+			float: left;
+			svg:hover {
+				path {
+					fill: $dark_blue;
+				}
+			}
+		}
+		.cart-link {
+			text-align: right;
+			width: $hundred;
+		}
+		.account-link {
+			text-align: center;
+			width: $fifty;
+		}
+		.search-form {
+			display: none;
+			position: absolute;
+			right: 60px;
+			top: -5px;
+			input {
+				border: 0;
+				font-size: 12px;
+				font-style: italic;
+				height: $thirty;
+			}
+		}
+		.search-link {
+			width: $fifty;
+		}
+	}
+}
