@@ -1,5 +1,5 @@
 .header {
-	background: $light_blue;
+	background: $dark_blue;
 	svg {
 		path {
 			@include transition(fill .3s ease-in-out);
@@ -18,7 +18,7 @@
 				@include span-columns(3);
 				@include shift(0);
 				padding-bottom: 1.5%;
-				padding-top: 1.5%;
+				padding-top: 1.75%;
 			}
 			svg {
 				&:hover {
@@ -82,23 +82,32 @@
 		}
 		.main-navigation {
 			@include span-columns(9);
-			padding-top: 1%;
 			.menu {
 				display: none;
 				@include media( $large-screen ) {
 					display: block;
+					padding-left: $twentyfive;
 				}
 				.menu-item {
+					border-top-color: $dark_blue;
+					border-top-style: solid;
+					border-top-width: 3px;
 					display: inline-block;
-					padding: 3%;
+					margin-left: 3%;
+					margin-right: 3%;
+					padding: 4.5% 0%;
 					a {
 						color: $white;
+						font-size: 18px;
 						font-weight: 700;
 						text-transform: uppercase;
 						&:hover {
-							color: $dark_blue;
+							color: $light_blue;
 						}
 					}
+				}
+				.current-menu-item {
+					border-top-color: $white;
 				}
 			}
 		}

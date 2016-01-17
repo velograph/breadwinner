@@ -17,6 +17,10 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
+			<?php the_post_thumbnail('full'); ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_title(); ?>
+			</a>
 			<?php
 				get_template_part( 'content', get_post_format() );
 			?>

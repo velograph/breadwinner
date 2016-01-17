@@ -19,8 +19,12 @@ body {
 			fill: $white;
 		}
 	}
-	a {
+	a,
+	a:visited {
 		color: $white;
+		&:hover {
+			color: $light_blue;
+		}
 	}
 	h6 {
 		margin-bottom: $ten;
@@ -71,7 +75,8 @@ body {
 			.social-media-link {
 				@include span-columns(4);
 				@include media( $large-screen ) {
-					@include span-columns(2);
+					@include span-columns(3);
+					text-align: center;
 				}
 				svg {
 					width: $twentyfive;
