@@ -14,4 +14,10 @@ jQuery(document).ready(function(){
 	});
 
 
+	jQuery('.scroll-for-content').click(function() {
+	    jQuery('html,body').animate({
+	        scrollTop: jQuery('.scroll-for-content').next().offset().top},
+	        2000);
+	});
+
 });

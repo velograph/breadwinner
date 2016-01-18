@@ -20,6 +20,7 @@
 @import "variables";
 @import "slick";
 @import "header";
+@import "modules";
 @import "footer";
 
 html,
@@ -31,6 +32,9 @@ body {
 body {
 	font-family: $acumen;
 	height: 100%;
+	img {
+		height: auto;
+	}
 	select {
 		border-color: $black;
 		color: $black;
@@ -53,19 +57,13 @@ body {
 			}
 		}
 	}
-	button {
-		font-size: 20px;
-	}
 	.button,
 	.search-submit,
 	.wc-proceed-to-checkout a {
-		background: $black;
+		background: $dark_blue;
 		border-radius: 0;
 		color: $white;
-		font-size: 14px;
-		font-weight: 400;
 		padding: $ten $fifteen;
-		text-transform: uppercase;
 		@include transition(background .2s ease-in-out);
 		&:hover {
 			background: $black;

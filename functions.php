@@ -135,6 +135,15 @@ add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
+add_image_size( 'full-width-slider-mobile', '480', '320', 'true' );
+add_image_size( 'full-width-slider-tablet', '768', '512', 'true' );
+add_image_size( 'full-width-slider-desktop', '1280', '853', 'true' );
+add_image_size( 'full-width-slider-retina', '2400', '1600', 'true' );
+
+add_image_size( 'banner-mobile', '480', '240', 'true' );
+add_image_size( 'banner-desktop', '1200', '400', 'true' );
+add_image_size( 'banner-retina', '2400', '800', 'true' );
+
 // Remove Woo styling
 add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
@@ -182,3 +191,9 @@ function theme_typekit_inline() {
 <?php }
 }
 add_action( 'wp_head', 'theme_typekit_inline' );
+
+function cc_mime_types($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');

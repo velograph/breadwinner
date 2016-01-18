@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Process" sketch:type="MSArtboardGroup" transform="translate(-760.000000, -1891.000000)">
+            <g id="Step-2" sketch:type="MSLayerGroup" transform="translate(0.000000, 1878.000000)">
+                <g id="Oval-2" transform="translate(760.000000, 13.000000)" sketch:type="MSShapeGroup">
+                    <circle fill="#8CD1F4" cx="27" cy="27" r="27"></circle>
+                    <path d="M32.256,34.08 L22.824,34.08 C24.696,29.328 32.28,27.888 32.28,22.608 C32.28,19.632 29.832,18 27,18 C23.136,18 21.72,20.472 21.168,22.872 L22.872,23.256 C23.16,21.504 24.456,19.488 26.952,19.488 C29.16,19.488 30.456,20.64 30.456,22.656 C30.456,27.312 24,27.672 21,33.744 L21,35.568 L32.256,35.568 L32.256,34.08 Z" id="2" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

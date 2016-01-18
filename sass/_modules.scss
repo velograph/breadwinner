@@ -1,0 +1,313 @@
+.full-width-slider {
+	height: calc(100vh - 100px);
+	overflow: hidden;
+	position: relative;
+	width: 100vw;
+	.slick-list {
+		.slide {
+			height: calc(100vh - 100px);
+			position: relative;
+			img {
+			}
+			.slide-caption {
+				background: $white;
+				bottom: 150px;
+				left: 0;
+				padding: $ten $twentyfive $ten 0;
+				position: absolute;
+				text-align: right;
+				width: 50%;
+				a {
+					color: $black;
+					font: {
+						size: 18px;
+					}
+					@include media( $large-screen ) {
+						font: {
+							size: 36px;
+						}
+					}
+					&:hover {
+						color: $dark_blue;
+					}
+				}
+			}
+		}
+	}
+}
+
+.scroll-for-content {
+	left: 50%;
+	bottom: $twentyfive;
+	position: absolute;
+	@include transform(translateX(-50%));
+	svg {
+		width: 75px;
+		path {
+			fill: $white;
+		}
+	}
+	&:hover {
+		cursor: pointer;
+		svg {
+			path {
+				fill: $dark_blue;
+			}
+		}
+	}
+}
+
+.large-open-section-container {
+	@include outer-container;
+	.large-open-section {
+		@include span-columns(8);
+		@include shift(2);
+		padding: $hundred;
+		text-align: center;
+		h3 {
+			// text-align: center;
+			p:last-child {
+				margin: 0;
+			}
+		}
+	}
+}
+
+.double-images {
+	@include row();
+	.image-one,
+	.image-two {
+		@include span-columns(6);
+		img {
+			float: left;
+		}
+	}
+	.image-one {
+
+	}
+	.image-two {
+
+	}
+}
+
+.section-header {
+	@include outer-container;
+	margin-top: $fifty;
+	h4 {
+		border-bottom: 1px solid $black;
+		margin-bottom: $twentyfive;
+		padding-bottom: $five;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.section-title {
+	text-align: center;
+	h2 {
+		margin-bottom: $twentyfive;
+	}
+}
+
+.image-with-content {
+	@include outer-container;
+	margin-bottom: $fifty;
+	.image {
+		@include span-columns(6);
+		.caption {
+			font-size: 12px;
+			font-style: italic;
+		}
+	}
+	.content {
+		@include span-columns(6);
+	}
+}
+
+.process-list {
+	@include outer-container;
+	margin-bottom: $fifty;
+	.number-row {
+		@include span-columns(8);
+		@include shift(2);
+		margin-bottom: $fifty;
+		.number {
+			@include span-columns(1);
+			position: relative;
+			.disc {
+				background: $light_blue;
+				border-radius: $hundred;
+				line-height: 43px;
+			}
+			.number {
+				color: $white;
+				font-size: 18px;
+				font-weight: 700;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				@include transform(translate(-50%,-50%));
+			}
+		}
+		.content {
+			@include span-columns(11);
+			font-size: 18px;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.large-button {
+	font-size: 18px;
+	margin-bottom: $fifty;
+	text-align: center;
+}
+
+.portal-container {
+	@include outer-container;
+	.content-portal {
+		@include span-columns(6);
+		margin-bottom: $fifty;
+		position: relative;
+		.image {
+			img {
+				float: left;
+			}
+		}
+		.caption,
+		.content {
+			position: absolute;
+			text-align: center;
+			width: 100%;
+		}
+		.caption {
+			background: rgba(255,255,255,.8);
+			bottom: $fifty;
+			color: $black;
+			padding: $five 25%;
+		}
+		.content {
+			bottom: 45px;
+			color: $white;
+			padding-left: 5%;
+			padding-right: 5%;
+			label[for="epm-email"],
+			input[name="epm-submit-chimp"] {
+				display: none;
+			}
+			h3 {
+				margin-bottom: $ten;
+			}
+			.epm-form-field {
+				margin: 0 auto;
+				width: 50%;
+				.email {
+					background-image: url(../images/mail.svg);
+					background-position: $five center;
+					background-repeat: no-repeat;
+					color: $gray;
+					font-size: 14px;
+					padding: 5px 10px 5px $thirty;
+				}
+			}
+		}
+	}
+}
+
+.even-alternating {
+	.alternating-section {
+		@include row();
+		margin-bottom: $hundred;
+		.image {
+			@include span-columns(6);
+			img {
+				float: left;
+			}
+		}
+		.content {
+			@include span-columns(6);
+			.step {
+				margin-bottom: $twentyfive;
+			}
+			.description {
+				width: 50%;
+			}
+		}
+	}
+	.odd-row {
+		.content {
+			text-align: right;
+			.description {
+				float: right;
+			}
+		}
+	}
+}
+
+.image-and-process {
+	@include outer-container;
+	.image,
+	.process-list {
+		@include span-columns(6);
+	}
+}
+
+.bike-portals {
+	@include outer-container;
+	margin-bottom: $fifty;
+	.portal {
+		@include span-columns(6);
+		@include omega(2n);
+		margin-bottom: $fifty;
+		position: relative;
+		img {
+			float: left;
+		}
+		.title {
+			background: $white;
+			bottom: $fifty;
+			padding: $five $ten;
+			position: absolute;
+			text-align: right;
+			width: 50%;
+		}
+		.overlay {
+			background: $black;
+			height: 100%;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			@include transition(opacity .2s ease-in-out);
+		}
+		&:hover {
+			.overlay {
+				opacity: .8;
+			}
+		}
+	}
+}
+
+.specs {
+	@include outer-container;
+	border-bottom: 1px solid $black;
+	margin-bottom: $fifty;
+	padding-bottom: $twentyfive;
+	padding-top: $twentyfive;
+	.spec-container {
+		@include columns(2);
+		.spec {
+			padding: $five 20%;
+		}
+	}
+}
+
+.highlight-gallery {
+	margin-bottom: $fifty;
+	img {
+		padding: 0 $twentyfive;
+	}
+}

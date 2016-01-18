@@ -1,5 +1,8 @@
 .header {
 	background: $dark_blue;
+	// position: absolute;
+	// width: 100%;
+	// z-index: 9;
 	svg {
 		path {
 			@include transition(fill .3s ease-in-out);
@@ -23,7 +26,7 @@
 			svg {
 				&:hover {
 					path {
-						fill: $dark_blue;
+						fill: $light_blue;
 					}
 				}
 			}
