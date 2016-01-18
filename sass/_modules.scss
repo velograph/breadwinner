@@ -92,7 +92,7 @@
 
 .section-header {
 	@include outer-container;
-	margin-top: $fifty;
+	margin-top: $hundred;
 	h4 {
 		border-bottom: 1px solid $black;
 		margin-bottom: $twentyfive;
@@ -307,7 +307,22 @@
 
 .highlight-gallery {
 	margin-bottom: $fifty;
-	img {
-		padding: 0 $twentyfive;
+	.slick-next {
+		right: $twentyfive;
+	}
+	.slick-prev {
+		left: $twentyfive;
+	}
+	.slick-track {
+		.highlight-image {
+			img {
+				padding: 0 $twentyfive;
+			}
+			.highlight-caption {
+				color: $gray;
+				font-size: 14px;
+				font-style: italic;
+			}
+		}
 	}
 }

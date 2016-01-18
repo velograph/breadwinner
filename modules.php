@@ -822,6 +822,14 @@ get_header(); ?>
 
 	<!-- End bike specs -->
 
+	<div class="section-header">
+
+		<h4>Highlights</h4>
+
+	</div>
+
+	<!-- End Section header -->
+
 	<div class="highlight-gallery">
 
 		<?php if( get_field('highlight_gallery') ) : ?>
@@ -833,7 +841,7 @@ get_header(); ?>
 			if( $images ): ?>
 				<?php foreach( $images as $image ): ?>
 
-					<div class="portal-image">
+					<div class="highlight-image">
 						<picture>
 							<!--[if IE 9]><video style="display: none"><![endif]-->
 							<source
@@ -851,6 +859,11 @@ get_header(); ?>
 							<!--[if IE 9]></video><![endif]-->
 							<img srcset="<?php echo $image[0]; ?>">
 						</picture>
+
+						<div class="highlight-caption">
+							<?php echo $image['caption']; ?>
+						</div>
+
 					</div>
 
 				<?php endforeach; ?>
