@@ -50,7 +50,7 @@ body {
 	a {
 		color: $dark_blue;
 		&:hover {
-			color: $light_blue;
+			color: $black;
 		}
 	}
 	.button,
@@ -63,6 +63,7 @@ body {
 		@include transition(background .2s ease-in-out);
 		&:hover {
 			background: $black;
+			color: $light_blue;
 		}
 	}
 	.woocommerce-info {
