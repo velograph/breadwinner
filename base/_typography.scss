@@ -29,8 +29,11 @@ h2 {
 }
 
 h3 {
-  font-size: $h3-font-size;
-  font-weight: 400;
+    font-weight: 400;
+    font-size: $h4-font-size;
+    @include media( $large-screen ) {
+        font-size: $h3-font-size;
+    }
 }
 
 h4 {

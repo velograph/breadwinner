@@ -1,22 +1,28 @@
 .full-width-slider {
-	height: calc(100vh - 100px);
 	overflow: hidden;
 	position: relative;
 	width: 100vw;
+	@include media( $large-screen ) {
+		height: calc(100vh - 100px);
+	}
 	.slick-list {
 		.slide {
-			height: calc(100vh - 100px);
 			position: relative;
-			img {
+			@include media( $large-screen ) {
+				height: calc(100vh - 100px);
 			}
 			.slide-caption {
 				background: $white;
-				bottom: 150px;
+				bottom: $twentyfive;
 				left: 0;
-				padding: $ten $twentyfive $ten 0;
+				padding: $five $fifteen;
 				position: absolute;
 				text-align: right;
 				width: 50%;
+				@include media( $large-screen ) {
+					bottom: 150px;
+					padding: $ten $twentyfive $ten 0;
+				}
 				a {
 					color: $black;
 					font: {
@@ -37,10 +43,14 @@
 }
 
 .scroll-for-content {
+	display: none;
 	left: 50%;
 	bottom: $twentyfive;
 	position: absolute;
 	@include transform(translateX(-50%));
+	@include media( $large-screen ) {
+		display: block;
+	}
 	svg {
 		width: 75px;
 		path {
@@ -60,10 +70,15 @@
 .large-open-section-container {
 	@include outer-container;
 	.large-open-section {
-		@include span-columns(8);
-		@include shift(2);
-		padding: $hundred;
+		@include span-columns(10);
+		@include shift(1);
+		padding: $hundred $twentyfive;
 		text-align: center;
+		@include media( $large-screen ) {
+			@include span-columns(8);
+			@include shift(2);
+			padding: $hundred;
+		}
 		h3 {
 			// text-align: center;
 			p:last-child {
@@ -77,16 +92,15 @@
 	@include row();
 	.image-one,
 	.image-two {
-		@include span-columns(6);
+		@include span-columns(12);
+		margin-bottom: $fifty;
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			margin-bottom: 0;
+		}
 		img {
 			float: left;
 		}
-	}
-	.image-one {
-
-	}
-	.image-two {
-
 	}
 }
 
@@ -113,48 +127,25 @@
 	@include outer-container;
 	margin-bottom: $fifty;
 	.image {
-		@include span-columns(6);
+		@include span-columns(10);
+		@include shift(1);
+		margin-bottom: $twentyfive;
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(0);
+			margin-bottom: 0;
+		}
 		.caption {
 			font-size: 12px;
 			font-style: italic;
 		}
 	}
 	.content {
-		@include span-columns(6);
-	}
-}
-
-.process-list {
-	@include outer-container;
-	margin-bottom: $fifty;
-	.number-row {
-		@include span-columns(8);
-		@include shift(2);
-		margin-bottom: $fifty;
-		.number {
-			@include span-columns(1);
-			position: relative;
-			.disc {
-				background: $light_blue;
-				border-radius: $hundred;
-				line-height: 43px;
-			}
-			.number {
-				color: $white;
-				font-size: 18px;
-				font-weight: 700;
-				left: 50%;
-				position: absolute;
-				top: 50%;
-				@include transform(translate(-50%,-50%));
-			}
-		}
-		.content {
-			@include span-columns(11);
-			font-size: 18px;
-		}
-		&:last-child {
-			margin-bottom: 0;
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(0);
 		}
 	}
 }
@@ -168,9 +159,12 @@
 .portal-container {
 	@include outer-container;
 	.content-portal {
-		@include span-columns(6);
 		margin-bottom: $fifty;
 		position: relative;
+		@include span-columns(12);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
 		.image {
 			img {
 				float: left;
@@ -186,13 +180,20 @@
 			background: rgba(255,255,255,.8);
 			bottom: $fifty;
 			color: $black;
-			padding: $five 25%;
+			padding: $five 10%;
+			@include media( $large-screen ) {
+				padding: $five 25%;
+			}
 		}
 		.content {
 			bottom: 45px;
 			color: $white;
-			padding-left: 5%;
-			padding-right: 5%;
+			padding-left: 10%;
+			padding-right: 10%;
+			@include media( $large-screen ) {
+				padding-left: 5%;
+				padding-right: 5%;
+			}
 			label[for="epm-email"],
 			input[name="epm-submit-chimp"] {
 				display: none;
@@ -202,7 +203,10 @@
 			}
 			.epm-form-field {
 				margin: 0 auto;
-				width: 50%;
+				width: 75%;
+				@include media( $large-screen ) {
+					width: 50%;
+				}
 				.email {
 					background-image: url(../images/mail.svg);
 					background-position: $five center;
@@ -221,26 +225,112 @@
 		@include row();
 		margin-bottom: $hundred;
 		.image {
-			@include span-columns(6);
+			@include span-columns(12);
+			margin-bottom: $twentyfive;
+			@include media( $large-screen ) {
+				@include span-columns(6);
+				margin-bottom: 0;
+			}
 			img {
 				float: left;
 			}
 		}
 		.content {
-			@include span-columns(6);
+			@include span-columns(10);
+			@include shift(1);
+			@include media( $large-screen ) {
+				@include span-columns(6);
+				@include shift(0);
+				margin-bottom: 0;
+			}
 			.step {
 				margin-bottom: $twentyfive;
 			}
 			.description {
-				width: 50%;
+				@include media( $large-screen ) {
+					width: 50%;
+				}
 			}
 		}
 	}
 	.odd-row {
+		display: flex;
+		flex-flow: column-reverse;
+		@include media( $large-screen ) {
+			display: block;
+			flex-flow: column;
+		}
 		.content {
-			text-align: right;
+			@include media( $large-screen ) {
+				text-align: right;
+			}
 			.description {
-				float: right;
+				@include media( $large-screen ) {
+					float: right;
+				}
+			}
+		}
+	}
+	.even-row {
+	}
+}
+
+.large-process-list {
+	@include outer-container;
+	margin-bottom: $fifty;
+	.process-list {
+		@include row();
+		.number-row {
+			@include span-columns(10);
+			@include shift(1);
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				@include span-columns(6);
+				@include shift(3);
+				margin-bottom: $twentyfive;
+			}
+			.step {
+				margin-bottom: $fifteen;
+				@include media( $large-screen ) {
+					@include span-columns(2);
+					margin-bottom: 0;
+					text-align: center;
+				}
+			}
+			.summary {
+				@include media( $large-screen ) {
+					@include span-columns(10);
+				}
+			}
+		}
+	}
+}
+
+.small-process-list {
+	.process-list {
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(12);
+			@include shift(0);
+		}
+		.number-row {
+			margin-bottom: $thirty;
+			.content {
+				@include row();
+				.step {
+					margin-bottom: $fifteen;
+					@include media( $large-screen ) {
+						@include span-columns(1);
+						text-align: center;
+						margin-bottom: 0;
+					}
+				}
+				.summary {
+					@include media( $large-screen ) {
+						@include span-columns(10);
+					}
+				}
 			}
 		}
 	}
@@ -248,9 +338,29 @@
 
 .image-and-process {
 	@include outer-container;
+	.image {
+		@include row();
+		margin-bottom: $twentyfive;
+		@include media( $large-screen ) {
+			margin-bottom: 0;
+		}
+		.caption {
+			@include span-columns(10);
+			@include shift(1);
+			color: $gray;
+			font-style: italic;
+			@include media( $large-screen ) {
+				@include span-columns(12);
+				@include shift(0);
+			}
+		}
+	}
 	.image,
-	.process-list {
-		@include span-columns(6);
+	.small-process-list {
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(0);
+		}
 	}
 }
 
@@ -258,10 +368,13 @@
 	@include outer-container;
 	margin-bottom: $fifty;
 	.portal {
-		@include span-columns(6);
-		@include omega(2n);
+		@include span-columns(12);
 		margin-bottom: $fifty;
 		position: relative;
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include omega(2n);
+		}
 		img {
 			float: left;
 		}
@@ -295,12 +408,23 @@
 	@include outer-container;
 	border-bottom: 1px solid $black;
 	margin-bottom: $fifty;
-	padding-bottom: $twentyfive;
+	padding-bottom: $fifty;
 	padding-top: $twentyfive;
 	.spec-container {
-		@include columns(2);
+		@include media( $large-screen ) {
+			@include columns(2);
+		}
 		.spec {
-			padding: $five 20%;
+			list-style-type: disc;
+			margin-left: $fifty;
+			margin-bottom: $fifteen;
+			padding: $five 10% $five 0;
+			@include media( $large-screen ) {
+				display: inline-block;
+				list-style-type: none;
+				margin-left: 0;
+				padding: $five 20%;
+			}
 		}
 	}
 }
@@ -308,15 +432,21 @@
 .highlight-gallery {
 	margin-bottom: $fifty;
 	.slick-next {
-		right: $twentyfive;
+		@include media( $large-screen ) {
+			right: $twentyfive;
+		}
 	}
 	.slick-prev {
-		left: $twentyfive;
+		@include media( $large-screen ) {
+			left: $twentyfive;
+		}
 	}
 	.slick-track {
 		.highlight-image {
 			img {
-				padding: 0 $twentyfive;
+				@include media( $large-screen ) {
+					padding: 0 $twentyfive;
+				}
 			}
 			.highlight-caption {
 				color: $gray;

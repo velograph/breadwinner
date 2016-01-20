@@ -20,6 +20,7 @@
 @import "variables";
 @import "slick";
 @import "header";
+@import "product";
 @import "modules";
 @import "footer";
 
@@ -47,14 +48,9 @@ body {
 		text-indent: -9999px;
 	}
 	a {
-		color: $black;
+		color: $dark_blue;
 		&:hover {
-			color: $black;
-		}
-		@include media( $large-screen ) {
-			&:visited {
-				color: $black;
-			}
+			color: $light_blue;
 		}
 	}
 	.button,

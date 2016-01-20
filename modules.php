@@ -21,7 +21,6 @@ get_header(); ?>
 			autoplay: false,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
-			// centered: true,
 			accessibility: false,
 			mobileFirst: false,
 		    lazyLoad: 'ondemand',
@@ -30,14 +29,26 @@ get_header(); ?>
 		jQuery('.highlight-gallery').slick({
 			arrows: true,
 			dots: false,
-			slidesToShow: 3,
 			autoplay: false,
 			autoplaySpeed: 3000,
-			pauseOnHover: true,
-			centered: true,
 			accessibility: false,
 			mobileFirst: false,
+			pauseOnHover: true,
 		    lazyLoad: 'ondemand',
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+				{
+					breakpoint: 5000,
+					settings: {
+						slidesToShow: 3,
+					}
+				}
+			]
 		});
 
 	});
@@ -58,14 +69,10 @@ get_header(); ?>
 						<div class="slide">
 							<a href="<?php the_sub_field('slider_link'); ?>">
 
-								<div class="slide-caption">
-									<?php the_sub_field('slider_caption'); ?>
-								</div>
-
-								<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'product-banner-mobile'); ?>
-								<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'product-banner-tablet'); ?>
-								<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'product-banner-desktop'); ?>
-								<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'product-banner-retina'); ?>
+								<?php $mobile = wp_get_attachment_image_src(get_sub_field('image'), 'full-width-slider-mobile'); ?>
+								<?php $tablet = wp_get_attachment_image_src(get_sub_field('image'), 'full-width-slider-tablet'); ?>
+								<?php $desktop = wp_get_attachment_image_src(get_sub_field('image'), 'full-width-slider-desktop'); ?>
+								<?php $retina = wp_get_attachment_image_src(get_sub_field('image'), 'full-width-slider-retina'); ?>
 
 								<picture>
 									<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -84,6 +91,10 @@ get_header(); ?>
 									<!--[if IE 9]></video><![endif]-->
 									<img srcset="<?php echo $image[0]; ?>">
 								</picture>
+
+								<div class="slide-caption">
+									<?php the_sub_field('slider_caption'); ?>
+								</div>
 
 							</a>
 						</div>
@@ -275,77 +286,6 @@ get_header(); ?>
 
 		<!-- End Section title -->
 
-		<div class="process-list">
-
-			<div class="number-row">
-
-				<div class="number">
-					<div class="disc">&nbsp;</div>
-					<div class="number">1</div>
-				</div>
-
-				<div class="content">
-					Whether you are designing the bike of your dreams or just want to start the process, it all starts with a $500 deposit.
-				</div>
-
-			</div>
-
-			<div class="number-row">
-
-				<div class="number">
-					<div class="disc">&nbsp;</div>
-					<div class="number">2</div>
-				</div>
-
-				<div class="content">
-					We follow up to walk you through sizing and component options. We offer many choices to help fit your budget and dreams.
-				</div>
-
-			</div>
-
-			<div class="number-row">
-
-				<div class="number">
-					<div class="disc">&nbsp;</div>
-					<div class="number">3</div>
-				</div>
-
-				<div class="content">
-					Once the details are settled, we’ll begin production.
-				</div>
-
-			</div>
-
-			<div class="number-row">
-
-				<div class="number">
-					<div class="disc">&nbsp;</div>
-					<div class="number">4</div>
-				</div>
-
-				<div class="content">
-					When your bike is ready, we’ll invoice you for the balance and ship it to your door within 8-12 weeks of placing your order.
-				</div>
-
-			</div>
-
-			<div class="number-row">
-
-				<div class="number">
-					<div class="disc">&nbsp;</div>
-					<div class="number">1</div>
-				</div>
-
-				<div class="content">
-					We follow up to walk you through sizing and component options. We offer many choices to help fit your budget and dreams.
-				</div>
-
-			</div>
-
-		</div>
-
-		<!-- End Process list -->
-
 		<div class="large-button">
 
 			<button class="button">Learn More</button>
@@ -516,6 +456,45 @@ get_header(); ?>
 
 			<!-- End Alternating section -->
 
+			<div class="large-process-list">
+
+				<?php if( have_rows('process_sections', 18) ) : ?>
+
+					<div class="process-list">
+
+						<?php while ( have_rows('process_sections', 18) ) : ?>
+
+							<div class="number-row">
+
+							<?php the_row(); ?>
+
+							<?php if( get_row_layout() == 'process_section' ) : ?>
+
+								<div class="content">
+
+									<div class="step">
+										<img src="<?php the_sub_field('step_number'); ?>" alt="step number" />
+									</div>
+									<div class="summary">
+										<?php the_sub_field('step_quick_summary'); ?>
+									</div>
+
+								</div>
+
+							<?php endif; ?>
+
+						</div>
+
+						<?php endwhile; ?>
+
+					</div>
+
+				<?php endif; ?>
+
+			</div>
+
+			<!-- End Process list -->
+
 			<div class="image-and-process">
 
 				<div class="image">
@@ -545,70 +524,37 @@ get_header(); ?>
 
 				</div>
 
-				<div class="process-list">
+				<div class="small-process-list">
 
-					<div class="number-row">
+					<div class="process-list">
 
-						<div class="number">
-							<div class="disc">&nbsp;</div>
-							<div class="number">1</div>
-						</div>
+						<?php if( have_rows('process_sections', 18) ) : ?>
 
-						<div class="content">
-							Whether you are designing the bike of your dreams or just want to start the process, it all starts with a $500 deposit.
-						</div>
+							<?php while ( have_rows('process_sections', 18) ) : ?>
 
-					</div>
+								<div class="number-row">
+							        <?php the_row(); ?>
 
-					<div class="number-row">
+							        <?php if( get_row_layout() == 'process_section' ) : ?>
 
-						<div class="number">
-							<div class="disc">&nbsp;</div>
-							<div class="number">2</div>
-						</div>
+										<div class="content">
 
-						<div class="content">
-							We follow up to walk you through sizing and component options. We offer many choices to help fit your budget and dreams.
-						</div>
+											<div class="step">
+												<img src="<?php the_sub_field('step_number'); ?>" alt="step number" />
+											</div>
+											<div class="summary">
+												<?php the_sub_field('step_quick_summary'); ?>
+											</div>
 
-					</div>
+										</div>
 
-					<div class="number-row">
+									<?php endif; ?>
 
-						<div class="number">
-							<div class="disc">&nbsp;</div>
-							<div class="number">3</div>
-						</div>
+								</div>
 
-						<div class="content">
-							Once the details are settled, we’ll begin production.
-						</div>
+						    <?php endwhile; ?>
 
-					</div>
-
-					<div class="number-row">
-
-						<div class="number">
-							<div class="disc">&nbsp;</div>
-							<div class="number">4</div>
-						</div>
-
-						<div class="content">
-							When your bike is ready, we’ll invoice you for the balance and ship it to your door within 8-12 weeks of placing your order.
-						</div>
-
-					</div>
-
-					<div class="number-row">
-
-						<div class="number">
-							<div class="disc">&nbsp;</div>
-							<div class="number">1</div>
-						</div>
-
-						<div class="content">
-							We follow up to walk you through sizing and component options. We offer many choices to help fit your budget and dreams.
-						</div>
+						<?php endif; ?>
 
 					</div>
 
@@ -798,18 +744,18 @@ get_header(); ?>
 
 				<?php if( have_rows('specs') ) : ?>
 
-					<div class="spec-container">
+					<ul class="spec-container">
 
 					    <?php while ( have_rows('specs') ) : ?>
 
 					        <?php the_row(); ?>
-								<div class="spec">
+								<li class="spec">
 						        	<?php the_sub_field('spec'); ?>
-								</div>
+								</li>
 
 					    <?php endwhile; ?>
 
-					</div>
+					</ul>
 
 				<?php endif; ?>
 

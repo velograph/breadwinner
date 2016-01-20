@@ -1,0 +1,88 @@
+.product-type-composite {
+	@include outer-container;
+	.images {
+		@include media( $large-screen ) {
+			@include span-columns(5);
+		}
+	}
+	.summary {
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(7);
+			@include shift(0);
+			@include omega;
+		}
+		@include omega;
+		[data-nav_title="Color"] {
+			display: none;
+			.component_options {
+				display: none;
+			}
+			.component_content {
+				.component_section_title {
+					display: none;
+				}
+			}
+		}
+		.composite_pagination {
+			display: none;
+		}
+		.full_width {
+			[data-nav_title="Frame Selection"] {
+				.bundled_product {
+					@include span-columns(6);
+					@include omega(2n);
+					padding: 0;
+					h4 {
+						font-size: $base-font-size;
+						font-weight: 400;
+					}
+					label {
+						font-size: 14px;
+						font-weight: 400;
+					}
+				}
+				.bundle_data {
+					clear: both;
+					font-weight: 700;
+				}
+			}
+			[data-nav_title="Color"] {
+				.bundled_product {
+					.single_variation_wrap {
+						.woocommerce-variation-price {
+							display: none;
+						}
+					}
+				}
+			}
+			[data-nav_title="Review Configuration"] {
+				.composite_summary {
+					.summary_elements {
+						li.summary_element {
+							text-align: left;
+							width: 19%;
+							.summary_element_title {
+								h3 {
+									font-weight: 700;
+								}
+							}
+							.summary_element_image {
+								display: none;
+							}
+							.summary_element_selection {
+								strong {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.related {
+		@include row();
+	}
+}
