@@ -150,10 +150,27 @@
 	}
 }
 
-.large-button {
-	font-size: 18px;
+.full-width-banner {
+	@include row();
 	margin-bottom: $fifty;
+	img {
+		float: left;
+	}
+}
+
+.large-button {
+	@include outer-container;
 	text-align: center;
+	.button {
+		font-size: 18px;
+		margin-bottom: $fifty;
+		@include span-columns(4);
+		@include shift(4);
+		@include media( $large-screen ) {
+			@include span-columns(2);
+			@include shift(5);
+		}
+	}
 }
 
 .portal-container {
@@ -175,6 +192,12 @@
 			position: absolute;
 			text-align: center;
 			width: 100%;
+			a {
+				color: $black;
+				&:hover {
+					color: $dark_blue;
+				}
+			}
 		}
 		.caption {
 			background: rgba(255,255,255,.8);
