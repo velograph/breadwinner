@@ -1,6 +1,6 @@
 body {
 	#sb_instagram {
-		display: inline-block;
+		@include row();
 		margin-top: $fifty;
 		padding-bottom: 0 !important;
 		#sbi_images {

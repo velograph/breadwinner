@@ -530,7 +530,7 @@ get_header(); ?>
 
 					<div class="caption">
 						<a href="<?php the_field(); ?>">
-						<h3><?php the_field('content_portal_text', 5248); ?></h3>
+						<?php the_field('content_portal_text', 5248); ?>
 					</div>
 				</a>
 

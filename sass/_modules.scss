@@ -42,6 +42,20 @@
 	}
 }
 
+.page-title {
+	background: rgba(255,255,255,.9);
+	bottom: 150px;
+	box-shadow: 1px 1px 2px $gray;
+	left: 0;
+	padding: $five $fifteen;
+	position: absolute;
+	text-align: right;
+	width: 50%;
+	@include media( $large-screen ) {
+		padding: $ten $twentyfive $ten 0;
+	}
+}
+
 .scroll-for-content {
 	display: none;
 	left: 50%;
@@ -75,8 +89,6 @@
 		padding: $hundred $twentyfive;
 		text-align: center;
 		@include media( $large-screen ) {
-			@include span-columns(8);
-			@include shift(2);
 			padding: $hundred;
 		}
 		h3 {
@@ -90,10 +102,10 @@
 
 .double-images {
 	@include row();
+	margin-bottom: $hundred;
 	.image-one,
 	.image-two {
 		@include span-columns(12);
-		margin-bottom: $fifty;
 		@include media( $large-screen ) {
 			@include span-columns(6);
 			margin-bottom: 0;
@@ -123,9 +135,14 @@
 	}
 }
 
+.small-image-caption {
+	font-size: 12px;
+	font-style: italic;
+}
+
 .image-with-content {
 	@include outer-container;
-	margin-bottom: $fifty;
+	margin-bottom: $hundred;
 	.image {
 		@include span-columns(10);
 		@include shift(1);
@@ -134,10 +151,6 @@
 			@include span-columns(6);
 			@include shift(0);
 			margin-bottom: 0;
-		}
-		.caption {
-			font-size: 12px;
-			font-style: italic;
 		}
 	}
 	.content {
@@ -152,7 +165,7 @@
 
 .full-width-banner {
 	@include row();
-	margin-bottom: $fifty;
+	margin-bottom: $hundred;
 	img {
 		float: left;
 	}
@@ -163,7 +176,7 @@
 	text-align: center;
 	.button {
 		font-size: 18px;
-		margin-bottom: $fifty;
+		margin-bottom: $hundred;
 		@include span-columns(4);
 		@include shift(4);
 		@include media( $large-screen ) {
@@ -175,10 +188,11 @@
 
 .portal-container {
 	@include outer-container;
+	margin-bottom: $hundred;
 	.content-portal {
-		margin-bottom: $fifty;
 		position: relative;
 		@include span-columns(12);
+		margin-bottom: $fifty;
 		@include media( $large-screen ) {
 			@include span-columns(6);
 		}
@@ -203,9 +217,12 @@
 			background: rgba(255,255,255,.8);
 			bottom: $fifty;
 			color: $black;
+			left: 0;
 			padding: $five 10%;
+			width: 50%;
 			@include media( $large-screen ) {
-				padding: $five 25%;
+				padding: $five;
+				text-align: right;
 			}
 		}
 		.content {
@@ -300,7 +317,7 @@
 
 .large-process-list {
 	@include outer-container;
-	margin-bottom: $fifty;
+	margin-bottom: $hundred;
 	.process-list {
 		@include row();
 		.number-row {
@@ -361,6 +378,7 @@
 
 .image-and-process {
 	@include outer-container;
+	margin-bottom: $hundred;
 	.image {
 		@include row();
 		margin-bottom: $twentyfive;
@@ -372,6 +390,9 @@
 			@include shift(1);
 			color: $gray;
 			font-style: italic;
+			a {
+				color: $gray;
+			}
 			@include media( $large-screen ) {
 				@include span-columns(12);
 				@include shift(0);
@@ -389,7 +410,7 @@
 
 .bike-portals {
 	@include outer-container;
-	margin-bottom: $fifty;
+	margin-bottom: $hundred;
 	.portal {
 		@include span-columns(12);
 		margin-bottom: $fifty;
@@ -430,7 +451,7 @@
 .specs {
 	@include outer-container;
 	border-bottom: 1px solid $black;
-	margin-bottom: $fifty;
+	margin-bottom: $hundred;
 	padding-bottom: $fifty;
 	padding-top: $twentyfive;
 	.spec-container {
@@ -453,7 +474,7 @@
 }
 
 .highlight-gallery {
-	margin-bottom: $fifty;
+	margin-bottom: $hundred;
 	.slick-next {
 		@include media( $large-screen ) {
 			right: $twentyfive;

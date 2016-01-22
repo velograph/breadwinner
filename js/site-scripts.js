@@ -20,4 +20,23 @@ jQuery(document).ready(function(){
 	        2000);
 	});
 
+
+	$first_price = jQuery('.composite_price .amount').html();
+	jQuery('.current-price h1').append($first_price);
+
+	jQuery('.composite_wrap').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
+		if (event.type == 'DOMNodeInserted') {
+			jQuery('.current-price h1').empty();
+			$price = jQuery('.composite_price .amount').html();
+			jQuery('.current-price h1').append($price);
+			// alert('Content added! Current content:' + '\n\n' + this.innerHTML);
+		} else {
+			// alert('Content removed! Current content:' + '\n\n' + this.innerHTML);
+		}
+	});
+
+});
+
+jQuery(window).load(function(){
+	jQuery('.composite_wrap .composite_price').hide();
 });

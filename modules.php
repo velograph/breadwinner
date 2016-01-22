@@ -107,6 +107,10 @@ get_header(); ?>
 
 		</div>
 
+		<div class="page-title">
+			The Lolo
+		</div>
+
 		<div class="scroll-for-content">
 
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
@@ -265,7 +269,7 @@ get_header(); ?>
 					<img srcset="<?php echo $image[0]; ?>">
 				</picture>
 
-				<div class="caption">
+				<div class="small-image-caption">
 					<?php the_field('caption'); ?>
 				</div>
 			</div>
@@ -320,7 +324,7 @@ get_header(); ?>
 
 					<div class="caption">
 						<a href="<?php the_field(); ?>">
-						<h3><?php the_field('content_portal_text'); ?></h3>
+						<?php the_field('content_portal_text'); ?>
 					</div>
 				</a>
 
