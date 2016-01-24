@@ -1,3 +1,11 @@
+.products {
+	@include outer-container;
+	.product {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+}
+
 .product-top {
 	@include outer-container;
 	.images,

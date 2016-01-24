@@ -413,10 +413,12 @@
 	}
 }
 
-.bike-portals {
+.bike-portals,
+.products {
 	@include outer-container;
 	margin-bottom: $hundred;
-	.portal {
+	.portal,
+	.product {
 		@include span-columns(12);
 		margin-bottom: $fifty;
 		position: relative;
