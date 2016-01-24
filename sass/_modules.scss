@@ -113,6 +113,11 @@
 		img {
 			float: left;
 		}
+		.image-content {
+			clear: both;
+			padding-top: $twentyfive;
+			text-align: center;
+		}
 	}
 }
 

@@ -121,6 +121,12 @@
 		@include media( $large-screen ) {
 			display: block;
 		}
+		a {
+			color: $white;
+			&:hover {
+				color: $light_blue;
+			}
+		}
 		svg {
 			width: $twenty;
 		}
@@ -128,13 +134,18 @@
 			float: left;
 			svg:hover {
 				path {
-					fill: $dark_blue;
+					fill: $light_blue;
 				}
 			}
 		}
 		.cart-link {
 			text-align: right;
 			width: $hundred;
+			.cart-count {
+				bottom: 3px;
+				margin-right: $five;
+				position: relative;
+			}
 		}
 		.account-link {
 			text-align: center;

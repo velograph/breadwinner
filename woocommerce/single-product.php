@@ -303,8 +303,6 @@ get_header( 'shop' ); ?>
 
 		</div>
 
-		<!-- End Portals -->
-
 	<?php
 		/**
 		 * woocommerce_after_main_content hook

@@ -16,11 +16,6 @@ body {
 	background: $dark_blue;
 	color: $white;
 	padding: $fifty 0;
-	svg {
-		path {
-			fill: $white;
-		}
-	}
 	a,
 	a:visited {
 		color: $white;
@@ -29,6 +24,7 @@ body {
 		}
 	}
 	h6 {
+		font-weight: 700;
 		margin-bottom: $ten;
 	}
 	li {
@@ -45,6 +41,9 @@ body {
 			}
 			svg {
 				padding: $fifteen 0;
+				path {
+					fill: $white;
+				}
 			}
 		}
 		.page-navigation {
@@ -81,7 +80,17 @@ body {
 					text-align: center;
 				}
 				svg {
+					vertical-align: text-top;
 					width: $twentyfive;
+					path {
+						fill: $white;
+						@include transition(fill .3s ease-in-out);
+					}
+					&:hover {
+						path {
+							fill: $light_blue;
+						}
+					}
 				}
 			}
 		}

@@ -116,7 +116,13 @@
 		<div class="utility-navigation">
 			<div class="cart-link utility-link">
 				<a href="/cart">
-					<svg viewBox="0 0 18 18">
+						<span class="cart-count">
+							<?php
+								$cart = WC()->cart->get_cart_contents_count();
+								echo $cart;
+							?>
+						</span>
+						<svg viewBox="0 0 18 18">
 					    <g id="Page-1" stroke="none" stroke-width="1" fill="" fill-rule="evenodd" sketch:type="MSPage">
 					        <g id="Single-Bike" sketch:type="MSArtboardGroup" transform="translate(-1282.000000, -26.000000)">
 					            <g id="Header" sketch:type="MSLayerGroup">
