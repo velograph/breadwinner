@@ -89,26 +89,29 @@
 		padding: $hundred $twentyfive;
 		text-align: center;
 		@include media( $large-screen ) {
-			padding: $hundred;
+			padding: 0 $hundred $hundred;
 		}
 		h3 {
-			// text-align: center;
 			p:last-child {
 				margin: 0;
 			}
+		}
+		svg {
+			max-width: 400px;
 		}
 	}
 }
 
 .double-images {
 	@include row();
-	margin-bottom: $hundred;
 	.image-one,
 	.image-two {
 		@include span-columns(12);
+		margin-bottom: $fifty;
 		@include media( $large-screen ) {
 			@include span-columns(6);
-			margin-bottom: 0;
+			@include omega(2n);
+			margin-bottom: $hundred;
 		}
 		img {
 			float: left;
