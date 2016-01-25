@@ -6,6 +6,14 @@
 	}
 }
 
+.breadcrumbs {
+	@include outer-container;
+	padding: $ten 0;
+	.woocommerce-breadcrumb {
+		font-size: 14px;
+	}
+}
+
 .product-top {
 	@include outer-container;
 	.images,
