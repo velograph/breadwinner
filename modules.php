@@ -235,6 +235,37 @@ get_header(); ?>
 
 		<!-- End full width banner -->
 
+		<div class="full-width-banner-with-title">
+			<?php $mobile = wp_get_attachment_image_src(get_field('banner_image'), 'banner-mobile'); ?>
+			<?php $tablet = wp_get_attachment_image_src(get_field('banner_image'), 'banner-tablet'); ?>
+			<?php $desktop = wp_get_attachment_image_src(get_field('banner_image'), 'banner-desktop'); ?>
+			<?php $retina = wp_get_attachment_image_src(get_field('banner_image'), 'banner-retina'); ?>
+
+			<picture class="image">
+				<!--[if IE 9]><video style="display: none"><![endif]-->
+				<source
+					srcset="<?php echo $mobile[0]; ?>"
+					media="(max-width: 500px)" />
+				<source
+					srcset="<?php echo $tablet[0]; ?>"
+					media="(max-width: 860px)" />
+				<source
+					srcset="<?php echo $desktop[0]; ?>"
+					media="(max-width: 1180px)" />
+				<source
+					srcset="<?php echo $retina[0]; ?>"
+					media="(min-width: 1181px)" />
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="<?php echo $image[0]; ?>">
+			</picture>
+
+			<div class="page-title">
+				<?php the_title(); ?>
+			</div>
+		</div>
+
+		<!-- End full width banner with title -->
+
 		<div class="large-open-section-container">
 			<div class="large-open-section">
 				<img src="<?php the_field('large_logo'); ?>" />

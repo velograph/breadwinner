@@ -12,6 +12,35 @@
 
 get_header(); ?>
 
+	<div class="full-width-banner">
+		<?php $mobile = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-retina'); ?>
+
+		<picture>
+			<!--[if IE 9]><video style="display: none"><![endif]-->
+			<source
+				srcset="<?php echo $mobile[0]; ?>"
+				media="(max-width: 500px)" />
+			<source
+				srcset="<?php echo $tablet[0]; ?>"
+				media="(max-width: 860px)" />
+			<source
+				srcset="<?php echo $desktop[0]; ?>"
+				media="(max-width: 1180px)" />
+			<source
+				srcset="<?php echo $retina[0]; ?>"
+				media="(min-width: 1181px)" />
+			<!--[if IE 9]></video><![endif]-->
+			<img srcset="<?php echo $image[0]; ?>">
+		</picture>
+		<div class="page-title">
+			PROCESS
+		</div>
+
+	</div>
+
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<div class="large-open-section-container">
@@ -187,6 +216,7 @@ get_header(); ?>
 					<img srcset="<?php echo $image[0]; ?>">
 				</picture>
 
+				<div class="overlay">&nbsp;</div>
 				<div class="caption">
 					<a href="<?php the_field(); ?>">
 					<?php the_field('story_portal_text', 5248); ?>

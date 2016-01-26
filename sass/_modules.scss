@@ -171,9 +171,16 @@
 	}
 }
 
-.full-width-banner {
-	@include row();
+.full-width-banner,
+.full-width-banner-with-title {
 	margin-bottom: $hundred;
+}
+
+.page-banner-with-title,
+.full-width-banner,
+.full-width-banner-with-title {
+	@include row();
+	position: relative;
 	img {
 		float: left;
 	}
@@ -418,10 +425,12 @@
 
 .bikes,
 .bike-portals,
+.portal-container,
 .products {
 	@include outer-container;
 	margin-bottom: $hundred;
 	.portal,
+	.content-portal,
 	.product {
 		@include span-columns(12);
 		margin-bottom: $fifty;

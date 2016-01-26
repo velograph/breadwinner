@@ -12,11 +12,40 @@
 
 get_header(); ?>
 
+	<div class="full-width-banner">
+		<?php $mobile = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-retina'); ?>
+
+		<picture>
+			<!--[if IE 9]><video style="display: none"><![endif]-->
+			<source
+				srcset="<?php echo $mobile[0]; ?>"
+				media="(max-width: 500px)" />
+			<source
+				srcset="<?php echo $tablet[0]; ?>"
+				media="(max-width: 860px)" />
+			<source
+				srcset="<?php echo $desktop[0]; ?>"
+				media="(max-width: 1180px)" />
+			<source
+				srcset="<?php echo $retina[0]; ?>"
+				media="(min-width: 1181px)" />
+			<!--[if IE 9]></video><![endif]-->
+			<img srcset="<?php echo $image[0]; ?>">
+		</picture>
+		<div class="page-title">
+			STORY
+		</div>
+
+	</div>
+
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<div class="large-open-section-container">
 			<div class="large-open-section">
-				<h3><?php the_field('large_copy_section'); ?></h3>
+				<h3><?php the_field('story_lead_in'); ?></h3>
 			</div>
 		</div>
 
@@ -178,5 +207,68 @@ get_header(); ?>
 		<?php endif; ?>
 
 	<?php endwhile; // end of the loop. ?>
+
+	<div class="portal-container">
+
+		<div class="content-portal">
+
+			<a href="<?php the_field('process_portal_link', 5248); ?>">
+				<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
+				<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
+				<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
+
+				<picture class="image">
+					<!--[if IE 9]><video style="display: none"><![endif]-->
+					<source
+						srcset="<?php echo $mobile[0]; ?>"
+						media="(max-width: 500px)" />
+					<source
+						srcset="<?php echo $tablet[0]; ?>"
+						media="(max-width: 860px)" />
+					<source
+						srcset="<?php echo $desktop[0]; ?>"
+						media="(min-width: 861px)" />
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="<?php echo $image[0]; ?>">
+				</picture>
+
+				<div class="overlay">&nbsp;</div>
+				<div class="caption">
+					<a href="<?php the_field(); ?>">
+					<?php the_field('process_portal_text', 5248); ?>
+				</div>
+			</a>
+
+		</div>
+
+		<div class="content-portal">
+
+			<?php $mobile = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-mobile'); ?>
+			<?php $tablet = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-tablet'); ?>
+			<?php $desktop = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-desktop'); ?>
+
+			<picture class="image">
+				<!--[if IE 9]><video style="display: none"><![endif]-->
+				<source
+					srcset="<?php echo $mobile[0]; ?>"
+					media="(max-width: 500px)" />
+				<source
+					srcset="<?php echo $tablet[0]; ?>"
+					media="(max-width: 860px)" />
+				<source
+					srcset="<?php echo $desktop[0]; ?>"
+					media="(min-width: 861px)" />
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="<?php echo $image[0]; ?>">
+			</picture>
+
+			<div class="content">
+				<h3><?php the_field('mailing_list_text', 5248); ?></h3>
+				<?php echo do_shortcode('[epm_mailchimp]'); ?>
+			</div>
+
+		</div>
+
+	</div>
 
 <?php get_footer(); ?>

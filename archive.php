@@ -32,7 +32,10 @@ get_header(); ?>
 			<!--[if IE 9]></video><![endif]-->
 			<img srcset="<?php echo $image[0]; ?>">
 		</picture>
-	</div>
+		<div class="page-title">
+			BLOG
+		</div>
+</div>
 
 	<?php if ( have_posts() ) : ?>
 
