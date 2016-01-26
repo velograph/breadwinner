@@ -1,0 +1,41 @@
+.blog-posts {
+	@include outer-container;
+	border: $five solid $light_blue;
+	padding: $fifty 0;
+	.post {
+		@include span-columns(8);
+		@include shift(2);
+		margin-bottom: $hundred;
+		.content {
+			@include span-columns(4);
+		}
+		.image {
+			@include span-columns(8);
+			@include transition(background 0.2s linear);
+			background: $white;
+			border: 1px solid $dark_gray;
+			padding: $fifteen;
+			img {
+				float: left;
+			}
+			a {
+				img {
+					opacity: 1;
+					@include transition(opacity 0.2s linear);
+				}
+				&:hover {
+					img {
+						opacity: .5;
+					}
+				}
+			}
+			&:hover {
+				background: $black;
+			}
+		}
+	}
+}
+
+.post-navigation {
+	@include outer-container;
+}
