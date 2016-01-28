@@ -8,9 +8,216 @@
  */
 ?>
 
+	<div class="portal-container">
+
+		<div class="content-portal">
+
+			<?php if( is_front_page() ) : ?>
+
+				<a href="<?php the_field('bike_portal_link', 5248); ?>">
+					<?php $mobile = wp_get_attachment_image_src(get_field('bike_portal_image', 5248), 'portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_field('bike_portal_image', 5248), 'portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_field('bike_portal_image', 5248), 'portal-desktop'); ?>
+
+					<picture class="image">
+						<!--[if IE 9]><video style="display: none"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(min-width: 861px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+
+					<div class="caption">
+						<a href="<?php the_field(); ?>">
+						<?php the_field('bike_portal_text', 5248); ?>
+					</div>
+				</a>
+
+			<?php elseif( is_page('process') ) : ?>
+
+				<a href="<?php the_field('story_portal_link', 5248); ?>">
+					<?php $mobile = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-desktop'); ?>
+
+					<picture class="image">
+						<!--[if IE 9]><video style="display: none"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(min-width: 861px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+
+					<div class="caption">
+						<a href="<?php the_field(); ?>">
+						<?php the_field('story_portal_text', 5248); ?>
+					</div>
+				</a>
+
+			<?php elseif( is_page('story') ) : ?>
+
+				<a href="<?php the_field('process_portal_link', 5248); ?>">
+					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
+
+					<picture class="image">
+						<!--[if IE 9]><video style="display: none"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(min-width: 861px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+
+					<div class="caption">
+						<a href="<?php the_field(); ?>">
+						<?php the_field('process_portal_text', 5248); ?>
+					</div>
+				</a>
+
+			<?php elseif( is_product_category( array('goods','apparel','accessories') ) ) : ?>
+
+				<a href="<?php the_field('story_portal_link', 5248); ?>">
+					<?php $mobile = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-desktop'); ?>
+
+					<picture class="image">
+						<!--[if IE 9]><video style="display: none"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(min-width: 861px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+
+					<div class="caption">
+						<a href="<?php the_field(); ?>">
+						<?php the_field('story_portal_text', 5248); ?>
+					</div>
+				</a>
+
+			<?php elseif( is_product_category( array('bikes','road','dirt','mountain') ) ) : ?>
+
+				<a href="<?php the_field('process_portal_link', 5248); ?>">
+					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
+
+					<picture class="image">
+						<!--[if IE 9]><video style="display: none"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(min-width: 861px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+
+					<div class="caption">
+						<a href="<?php the_field(); ?>">
+						<?php the_field('process_portal_text', 5248); ?>
+					</div>
+				</a>
+
+			<?php elseif( is_product() ) : ?>
+
+				<a href="<?php the_field('process_portal_link', 5248); ?>">
+					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
+					<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
+					<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
+
+					<picture class="image">
+						<!--[if IE 9]><video style="display: none"><![endif]-->
+						<source
+							srcset="<?php echo $mobile[0]; ?>"
+							media="(max-width: 500px)" />
+						<source
+							srcset="<?php echo $tablet[0]; ?>"
+							media="(max-width: 860px)" />
+						<source
+							srcset="<?php echo $desktop[0]; ?>"
+							media="(min-width: 861px)" />
+						<!--[if IE 9]></video><![endif]-->
+						<img srcset="<?php echo $image[0]; ?>">
+					</picture>
+
+					<div class="caption">
+						<a href="<?php the_field(); ?>">
+						<?php the_field('process_portal_text', 5248); ?>
+					</div>
+				</a>
+
+			<?php endif; ?>
+
+		</div>
+
+		<div class="content-portal">
+
+			<?php $mobile = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-mobile'); ?>
+			<?php $tablet = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-tablet'); ?>
+			<?php $desktop = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-desktop'); ?>
+
+			<picture class="image">
+				<!--[if IE 9]><video style="display: none"><![endif]-->
+				<source
+					srcset="<?php echo $mobile[0]; ?>"
+					media="(max-width: 500px)" />
+				<source
+					srcset="<?php echo $tablet[0]; ?>"
+					media="(max-width: 860px)" />
+				<source
+					srcset="<?php echo $desktop[0]; ?>"
+					media="(min-width: 861px)" />
+				<!--[if IE 9]></video><![endif]-->
+				<img srcset="<?php echo $image[0]; ?>">
+			</picture>
+
+			<div class="content">
+				<h3><?php the_field('mailing_list_text', 5248); ?></h3>
+				<?php echo do_shortcode('[epm_mailchimp]'); ?>
+			</div>
+
+		</div>
+
+	</div>
+
 	<div class="instagram">
 		<?php echo do_shortcode('[instagram-feed showbutton=false showheader=false showfollow=false]'); ?>
 	</div>
+
 	<footer class="footer">
 		<div class="inner-container">
 			<div class="footer-logo">

@@ -18,7 +18,7 @@ get_header(); ?>
 		jQuery('.full-width-slider').slick({
 			arrows: true,
 			dots: false,
-			autoplay: false,
+			autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
 			accessibility: false,
@@ -26,30 +26,30 @@ get_header(); ?>
 		    lazyLoad: 'ondemand',
 		});
 
-		jQuery('.highlight-gallery').slick({
-			arrows: true,
-			dots: false,
-			autoplay: false,
-			autoplaySpeed: 3000,
-			accessibility: false,
-			mobileFirst: false,
-			pauseOnHover: true,
-		    lazyLoad: 'ondemand',
-			responsive: [
-				{
-					breakpoint: 767,
-					settings: {
-						slidesToShow: 1,
-					}
-				},
-				{
-					breakpoint: 5000,
-					settings: {
-						slidesToShow: 3,
-					}
-				}
-			]
-		});
+		// jQuery('.highlight-gallery').slick({
+		// 	arrows: true,
+		// 	dots: false,
+		// 	autoplay: false,
+		// 	autoplaySpeed: 3000,
+		// 	accessibility: false,
+		// 	mobileFirst: false,
+		// 	pauseOnHover: true,
+		//     lazyLoad: 'ondemand',
+		// 	responsive: [
+		// 		{
+		// 			breakpoint: 767,
+		// 			settings: {
+		// 				slidesToShow: 1,
+		// 			}
+		// 		},
+		// 		{
+		// 			breakpoint: 5000,
+		// 			settings: {
+		// 				slidesToShow: 3,
+		// 			}
+		// 		}
+		// 	]
+		// });
 
 	});
 </script>
@@ -350,70 +350,6 @@ get_header(); ?>
 		</div>
 
 		<!-- End Large button -->
-
-		<div class="portal-container">
-
-			<div class="content-portal">
-
-				<a href="<?php the_field('content_portal_link', 5248); ?>">
-					<?php $mobile = wp_get_attachment_image_src(get_field('content_portal_image', 5248), 'portal-mobile'); ?>
-					<?php $tablet = wp_get_attachment_image_src(get_field('content_portal_image', 5248), 'portal-tablet'); ?>
-					<?php $desktop = wp_get_attachment_image_src(get_field('content_portal_image', 5248), 'portal-desktop'); ?>
-
-					<picture class="image">
-						<!--[if IE 9]><video style="display: none"><![endif]-->
-						<source
-							srcset="<?php echo $mobile[0]; ?>"
-							media="(max-width: 500px)" />
-						<source
-							srcset="<?php echo $tablet[0]; ?>"
-							media="(max-width: 860px)" />
-						<source
-							srcset="<?php echo $desktop[0]; ?>"
-							media="(min-width: 861px)" />
-						<!--[if IE 9]></video><![endif]-->
-						<img srcset="<?php echo $image[0]; ?>">
-					</picture>
-
-					<div class="caption">
-						<a href="<?php the_field(); ?>">
-						<?php the_field('content_portal_text', 5248); ?>
-					</div>
-				</a>
-
-			</div>
-
-			<div class="content-portal">
-
-				<?php $mobile = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-mobile'); ?>
-				<?php $tablet = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-tablet'); ?>
-				<?php $desktop = wp_get_attachment_image_src(get_field('mailing_list_image', 5248), 'portal-desktop'); ?>
-
-				<picture class="image">
-					<!--[if IE 9]><video style="display: none"><![endif]-->
-					<source
-						srcset="<?php echo $mobile[0]; ?>"
-						media="(max-width: 500px)" />
-					<source
-						srcset="<?php echo $tablet[0]; ?>"
-						media="(max-width: 860px)" />
-					<source
-						srcset="<?php echo $desktop[0]; ?>"
-						media="(min-width: 861px)" />
-					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $image[0]; ?>">
-				</picture>
-
-				<div class="content">
-					<h3><?php the_field('mailing_list_text', 5248); ?></h3>
-					<?php echo do_shortcode('[epm_mailchimp]'); ?>
-				</div>
-
-			</div>
-
-		</div>
-
-		<!-- End Portals -->
 
 	<?php endwhile; // end of the loop. ?>
 

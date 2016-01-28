@@ -26,7 +26,7 @@ get_header( 'shop' ); ?>
 		jQuery('.full-width-slider').slick({
 			arrows: true,
 			dots: false,
-			autoplay: false,
+			autoplay: true,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
 			accessibility: false,
