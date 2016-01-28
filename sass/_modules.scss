@@ -310,6 +310,9 @@
 			.step {
 				margin-bottom: $twentyfive;
 			}
+			.title {
+				margin-bottom: $fifteen;
+			}
 			.description {
 				@include media( $large-screen ) {
 					width: 50%;

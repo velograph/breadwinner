@@ -89,10 +89,12 @@ get_header(); ?>
 									<div class="step">
 										<img src="<?php the_sub_field('step_number'); ?>" alt="step_number" />
 									</div>
+									<div class="title">
+										<h3><?php the_sub_field('step_title'); ?></h3>
+									</div>
 									<div class="description">
 										<?php the_sub_field('step_description'); ?>
 									</div>
-
 
 								</div>
 
@@ -102,6 +104,9 @@ get_header(); ?>
 
 									<div class="step">
 										<img src="<?php the_sub_field('step_number'); ?>" alt="step_number" />
+									</div>
+									<div class="title">
+										<h3><?php the_sub_field('step_title'); ?></h3>
 									</div>
 									<div class="description">
 										<?php the_sub_field('step_description'); ?>
@@ -149,7 +154,7 @@ get_header(); ?>
 
 		<div class="section-title">
 
-			<h2><?php the_field('process_wrap_up_title'); ?></h2>
+			<h3><?php the_field('process_wrap_up_title'); ?></h3>
 
 		</div>
 
