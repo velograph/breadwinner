@@ -1,152 +1,160 @@
-<div class="section-header">
+<div class="bike-archive">
 
-	<h4>Road</h4>
+	<div class="bikes">
 
-</div>
+		<div class="section-header">
 
-<!-- End Section header -->
+			<h4>Road</h4>
 
-<div class="bike-portals">
+		</div>
 
-	<?php
+		<!-- End Section header -->
 
-		$args = array(
-			'post_type' => 'product',
-			'tax_query' => array(
-				relation => 'AND',
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'bikes',
-				),
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'road',
-				),
-			),
-		);
-		$query = new WP_Query($args);
+		<div class="portal-container">
 
-		if($query->have_posts()) : ?>
+			<?php
 
-		<?php while($query->have_posts()) : ?>
+				$args = array(
+					'post_type' => 'product',
+					'tax_query' => array(
+						relation => 'AND',
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'bikes',
+						),
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'road',
+						),
+					),
+				);
+				$query = new WP_Query($args);
 
-			<?php $query->the_post(); ?>
+				if($query->have_posts()) : ?>
 
-			<div class="portal">
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
-					<div class="overlay">&nbsp;</div>
-					<h6 class="title"><?php the_title() ?></h6>
-				</a>
-			</div>
+				<?php while($query->have_posts()) : ?>
 
-		<?php endwhile;
-		wp_reset_query(); ?>
+					<?php $query->the_post(); ?>
 
-	<?php endif; ?>
+					<div class="portal">
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail(); ?>
+							<div class="overlay">&nbsp;</div>
+							<h6 class="title"><?php the_title() ?></h6>
+						</a>
+					</div>
 
-</div>
+				<?php endwhile;
+				wp_reset_query(); ?>
 
-<div class="section-header">
+			<?php endif; ?>
 
-	<h4>Dirt</h4>
+		</div>
 
-</div>
+		<div class="section-header">
 
-<!-- End Section header -->
+			<h4>Dirt</h4>
 
-<div class="bike-portals">
+		</div>
 
-	<?php
+		<!-- End Section header -->
 
-		$args = array(
-			'post_type' => 'product',
-			'tax_query' => array(
-				relation => 'AND',
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'bikes',
-				),
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'dirt',
-				),
-			),
-		);
-		$query = new WP_Query($args);
+		<div class="portal-container">
 
-		if($query->have_posts()) : ?>
+			<?php
 
-		<?php while($query->have_posts()) : ?>
+				$args = array(
+					'post_type' => 'product',
+					'tax_query' => array(
+						relation => 'AND',
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'bikes',
+						),
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'dirt',
+						),
+					),
+				);
+				$query = new WP_Query($args);
 
-			<?php $query->the_post(); ?>
+				if($query->have_posts()) : ?>
 
-			<div class="portal">
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
-					<div class="overlay">&nbsp;</div>
-					<h6 class="title"><?php the_title() ?></h6>
-				</a>
-			</div>
+				<?php while($query->have_posts()) : ?>
 
-		<?php endwhile;
-		wp_reset_query(); ?>
+					<?php $query->the_post(); ?>
 
-	<?php endif; ?>
+					<div class="portal">
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail(); ?>
+							<div class="overlay">&nbsp;</div>
+							<h6 class="title"><?php the_title() ?></h6>
+						</a>
+					</div>
 
-</div>
+				<?php endwhile;
+				wp_reset_query(); ?>
 
-<div class="section-header">
+			<?php endif; ?>
 
-	<h4>Mountain</h4>
+		</div>
 
-</div>
+		<div class="section-header">
 
-<!-- End Section header -->
+			<h4>Mountain</h4>
 
-<div class="bike-portals">
+		</div>
 
-	<?php
+		<!-- End Section header -->
 
-		$args = array(
-			'post_type' => 'product',
-			'tax_query' => array(
-				relation => 'AND',
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'bikes',
-				),
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'mountain',
-				),
-			),
-		);
-		$query = new WP_Query($args);
+		<div class="portal-container">
 
-		if($query->have_posts()) : ?>
+			<?php
 
-		<?php while($query->have_posts()) : ?>
+				$args = array(
+					'post_type' => 'product',
+					'tax_query' => array(
+						relation => 'AND',
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'bikes',
+						),
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'mountain',
+						),
+					),
+				);
+				$query = new WP_Query($args);
 
-			<?php $query->the_post(); ?>
+				if($query->have_posts()) : ?>
 
-			<div class="portal">
-				<a href="<?php the_permalink(); ?>">
-					<?php the_post_thumbnail(); ?>
-					<div class="overlay">&nbsp;</div>
-					<h6 class="title"><?php the_title() ?></h6>
-				</a>
-			</div>
+				<?php while($query->have_posts()) : ?>
 
-		<?php endwhile;
-		wp_reset_query(); ?>
+					<?php $query->the_post(); ?>
 
-	<?php endif; ?>
+					<div class="portal">
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail(); ?>
+							<div class="overlay">&nbsp;</div>
+							<h6 class="title"><?php the_title() ?></h6>
+						</a>
+					</div>
+
+				<?php endwhile;
+				wp_reset_query(); ?>
+
+			<?php endif; ?>
+
+		</div>
+
+	</div>
 
 </div>

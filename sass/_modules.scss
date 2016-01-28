@@ -1,9 +1,18 @@
+.page-template-front-page {
+	.full-width-slider {
+		@include media( $large-screen ) {
+			margin-bottom: $hundred;
+		}
+	}
+}
+
 .full-width-slider {
 	overflow: hidden;
 	position: relative;
 	width: 100vw;
 	@include media( $large-screen ) {
 		height: calc(100vh - 100px);
+		width: 100%;
 	}
 	.slick-list {
 		.slide {
@@ -423,15 +432,12 @@
 	}
 }
 
-.bikes,
-.bike-portals,
-.portal-container,
+.bike-archive,
 .products {
 	@include outer-container;
 	margin-bottom: $hundred;
-	.portal,
-	.content-portal,
-	.product {
+	.product,
+	.portal {
 		@include span-columns(12);
 		margin-bottom: $fifty;
 		position: relative;
@@ -439,6 +445,31 @@
 			@include span-columns(6);
 			@include omega(2n);
 		}
+	}
+}
+
+.goods-archive {
+	@include outer-container;
+	margin-bottom: $hundred;
+	.portal,
+	.product {
+		@include span-columns(12);
+		margin-bottom: $fifty;
+		position: relative;
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include omega(3n);
+		}
+	}
+}
+
+.bike-archive,
+.products,
+.portal-container,
+.goods-archive {
+	.portal,
+	.content-portal,
+	.product {
 		img {
 			float: left;
 		}
