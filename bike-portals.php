@@ -4,11 +4,9 @@
 
 		<div class="section-header">
 
-			<h4>Road</h4>
+			<h4><a href="/product-category/bikes/road/">Road</a></h4>
 
 		</div>
-
-		<!-- End Section header -->
 
 		<div class="portal-container">
 
@@ -42,6 +40,9 @@
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail(); ?>
 							<div class="overlay">&nbsp;</div>
+							<div class="tagline">
+								<h2><?php the_excerpt(); ?></h2>
+							</div>
 							<h6 class="title"><?php the_title() ?></h6>
 						</a>
 					</div>
@@ -55,11 +56,9 @@
 
 		<div class="section-header">
 
-			<h4>Dirt</h4>
+			<h4><a href="/product-category/bikes/dirt/">Dirt</a></h4>
 
 		</div>
-
-		<!-- End Section header -->
 
 		<div class="portal-container">
 
@@ -93,6 +92,9 @@
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail(); ?>
 							<div class="overlay">&nbsp;</div>
+							<div class="tagline">
+								<h2><?php the_excerpt(); ?></h2>
+							</div>
 							<h6 class="title"><?php the_title() ?></h6>
 						</a>
 					</div>
@@ -106,11 +108,9 @@
 
 		<div class="section-header">
 
-			<h4>Mountain</h4>
+			<h4><a href="/product-category/bikes/mountain/">Mountain</a></h4>
 
 		</div>
-
-		<!-- End Section header -->
 
 		<div class="portal-container">
 
@@ -144,6 +144,9 @@
 						<a href="<?php the_permalink(); ?>">
 							<?php the_post_thumbnail(); ?>
 							<div class="overlay">&nbsp;</div>
+							<div class="tagline">
+								<h2><?php the_excerpt(); ?></h2>
+							</div>
 							<h6 class="title"><?php the_title() ?></h6>
 						</a>
 					</div>

@@ -12,14 +12,14 @@
 
 get_header(); ?>
 
-	<div class="full-width-banner">
+	<!-- <div class="full-width-banner">
 		<?php $mobile = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-mobile'); ?>
 		<?php $tablet = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-tablet'); ?>
 		<?php $desktop = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-desktop'); ?>
 		<?php $retina = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-retina'); ?>
 
 		<picture>
-			<!--[if IE 9]><video style="display: none"><![endif]-->
+			<!--[if IE 9]><video style="display: none"><![endif]
 			<source
 				srcset="<?php echo $mobile[0]; ?>"
 				media="(max-width: 500px)" />
@@ -32,7 +32,7 @@ get_header(); ?>
 			<source
 				srcset="<?php echo $retina[0]; ?>"
 				media="(min-width: 1181px)" />
-			<!--[if IE 9]></video><![endif]-->
+			<!--[if IE 9]></video><![endif]
 			<img srcset="<?php echo $image[0]; ?>">
 		</picture>
 		<div class="page-title">
@@ -40,7 +40,7 @@ get_header(); ?>
 		</div>
 
 	</div>
-
+ -->
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<div class="large-open-section-container">
@@ -86,13 +86,11 @@ get_header(); ?>
 
 								<div class="content">
 
-									<div class="step">
-										<img src="<?php the_sub_field('step_number'); ?>" alt="step_number" />
-									</div>
-									<div class="title">
-										<h3><?php the_sub_field('step_title'); ?></h3>
-									</div>
 									<div class="description">
+										<div class="step">
+											<img src="<?php the_sub_field('step_number'); ?>" alt="step_number" />
+											<h3><?php the_sub_field('step_title'); ?></h3>
+										</div>
 										<?php the_sub_field('step_description'); ?>
 									</div>
 
@@ -102,13 +100,11 @@ get_header(); ?>
 
 								<div class="content">
 
-									<div class="step">
-										<img src="<?php the_sub_field('step_number'); ?>" alt="step_number" />
-									</div>
-									<div class="title">
-										<h3><?php the_sub_field('step_title'); ?></h3>
-									</div>
 									<div class="description">
+										<div class="step">
+											<img src="<?php the_sub_field('step_number'); ?>" alt="step_number" />
+											<h3><?php the_sub_field('step_title'); ?></h3>
+										</div>
 										<?php the_sub_field('step_description'); ?>
 									</div>
 
@@ -152,12 +148,12 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		<div class="section-title">
+		<!-- <div class="section-title">
 
 			<h3><?php the_field('process_wrap_up_title'); ?></h3>
 
 		</div>
-
+ -->
 		<div class="large-open-section-container">
 			<div class="large-open-section">
 				<h3><?php the_field('process_wrap_up_copy'); ?></h3>
@@ -166,7 +162,7 @@ get_header(); ?>
 
 		<div class="large-button">
 
-			<button class="button">Learn More</button>
+			<a href="/product-category/bikes/" class="button">Choose Your Bike</a>
 
 		</div>
 

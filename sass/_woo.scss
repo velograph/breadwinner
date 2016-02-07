@@ -1,0 +1,294 @@
+.woocommerce-cart,
+.woocommerce-account {
+	.entry-content {
+		margin-bottom: $hundred;
+		margin-top: $hundred;
+		@include outer-container;
+	}
+}
+
+.woocommerce-account {
+	.lost_reset_password {
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(4);
+		}
+	}
+}
+
+.woocommerce-cart {
+	.cart_item {
+		text-align: center;
+	}
+	.component_container_table_item {
+		div {
+			text-align: center;
+			.section-title {
+				margin-bottom: $ten;
+			}
+		}
+		.product-quantity {
+			input {
+				margin: 0 auto;
+				width: 40%;
+			}
+		}
+	}
+	.bundled_table_item {
+		.product-quantity {
+			visibility: hidden;
+		}
+		.product-name {
+			a {
+				color: $black;
+			}
+		}
+	}
+	.component_table_item,
+	.bundled_table_item,
+	.bundle_table_item {
+		div {
+			text-align: center;
+		}
+		.product-remove,
+		.product-thumbnail {
+			.section-title {
+				visibility: hidden;
+			}
+		}
+		.product-name,
+		.product-price,
+		.product-quantity,
+		.product-subtotal {
+			.section-title {
+				display: none;
+			}
+			.component {
+				dt {
+					margin: 0;
+				}
+			}
+		}
+		.product-thumbnail {
+			img {
+				display: none;
+			}
+		}
+	}
+}
+
+.shop_table {
+	h2 {
+		text-align: center;
+	}
+	.cart_item:nth-child(4) {
+		.component {
+			display: none;
+		}
+		.variation {
+			margin-top: 0;
+			dt {
+				margin-top: 0;
+			}
+		}
+	}
+	.row {
+		@include row();
+		border-bottom: 1px solid $light-gray;
+		padding: $fifteen 0;
+		.section-title {
+			font-weight: 900;
+		}
+		a {
+			color: $blue;
+			font-weight: 400;
+			&:hover {
+				color: $black;
+			}
+		}
+		.product-remove {
+			@include media( $large-screen ) {
+				@include span-columns(1);
+			}
+		}
+		.product-thumbnail {
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
+		}
+		.product-name {
+			@include span-columns(6);
+			@include media( $mobile-screen ) {
+				margin-bottom: $fifteen;
+			}
+			@include media( $large-screen ) {
+				@include span-columns(3);
+			}
+		}
+		.product-price {
+			@include span-columns(6);
+			@include omega;
+			@include media( $mobile-screen ) {
+				margin-bottom: $fifteen;
+				text-align: right;
+			}
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
+		}
+		.product-quantity {
+			@include span-columns(6);
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
+		}
+		.product-subtotal {
+			@include span-columns(6);
+			@include omega;
+			@include media( $mobile-screen ) {
+				text-align: right;
+			}
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
+		}
+	}
+}
+
+.bottom-of-cart {
+	@include row();
+	padding-top: $fifty;
+	.coupons {
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
+		.coupon {
+			margin-bottom: $twentyfive;
+			width: 50%;
+			input[type="submit"] {
+				background: $light-gray;
+				&:hover {
+					background: $blue;
+				}
+			}
+		}
+		.update-cart {
+			margin-bottom: $twentyfive;
+			input[type="submit"] {
+				background: $light-gray;
+				&:hover {
+					background: $blue;
+				}
+			}
+		}
+	}
+	.cart-collaterals {
+		@include media( $large-screen ) {
+			clear: both;
+			// @include span-columns(6);
+		}
+		.wc-proceed-to-checkout {
+			@include row();
+			margin: $twentyfive 0;
+		}
+	}
+}
+
+.woocommerce-checkout {
+	.woocommerce-info {
+		@include row();
+		margin-bottom: $twentyfive;
+	}
+	.checkout_coupon {
+		input[type="text"] {
+			width: 25%;
+		}
+		input[type="submit"] {
+			background: $light-gray;
+			margin-bottom: $twentyfive;
+			&:hover {
+				background: $blue;
+			}
+		}
+	}
+	.checkout {
+		@include row();
+		.customer-information {
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+		}
+		.gift-certificate,
+		.review-order {
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+			label[for="payment_method_intuit_qbms"] {
+				@include row();
+				img {
+					display: inline-block;
+					width: 14%;
+				}
+			}
+			.payment_methods {
+				.payment_method_paypal_pro_payflow {
+					img {
+						max-width: 198px !important;
+					}
+				}
+				.payment_method_paypal_express {
+					img {
+						max-width: 188px !important;
+					}
+				}
+				li {
+					.shipping-method-label {
+						display: block;
+					}
+					&.payment_method_paypal {
+						img {
+							width: 50%;
+						}
+						.about_paypal {
+							display: block;
+						}
+					}
+				}
+			}
+			.place-order {
+				.terms {
+					label {
+						display: inline;
+					}
+				}
+			}
+		}
+	}
+}
+
+#customer_login {
+	@include row();
+	.col-1 {
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(2);
+		}
+		.inline {
+			display: inline;
+		}
+		.lost_password {
+			font-size: 14px;
+			a {
+				color: $medium-gray;
+				&:hover {
+					color: $blue;
+				}
+			}
+		}
+	}
+	.col-2 {
+		@include media( $large-screen ) {
+			@include span-columns(4);
+		}
+	}
+}

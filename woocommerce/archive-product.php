@@ -26,10 +26,32 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 ?>
 
 <div class="page-banner-with-title">
-	<?php $mobile = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-mobile'); ?>
-	<?php $tablet = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-tablet'); ?>
-	<?php $desktop = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-desktop'); ?>
-	<?php $retina = wp_get_attachment_image_src(get_field('banner_image', 5248), 'banner-retina'); ?>
+	<?php if( has_term('road','product_cat') ) : ?>
+		<?php $mobile = wp_get_attachment_image_src(get_field('road_banner', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('road_banner', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('road_banner', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('road_banner', 5248), 'banner-retina'); ?>
+	<?php elseif( has_term('dirt','product_cat') ) : ?>
+		<?php $mobile = wp_get_attachment_image_src(get_field('dirt_banner', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('dirt_banner', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('dirt_banner', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('dirt_banner', 5248), 'banner-retina'); ?>
+	<?php elseif( has_term('mountain','product_cat') ) : ?>
+		<?php $mobile = wp_get_attachment_image_src(get_field('mountain_banner', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('mountain_banner', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('mountain_banner', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('mountain_banner', 5248), 'banner-retina'); ?>
+	<?php elseif( has_term('accessories','product_cat') ) : ?>
+		<?php $mobile = wp_get_attachment_image_src(get_field('accessories_banner', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('accessories_banner', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('accessories_banner', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('accessories_banner', 5248), 'banner-retina'); ?>
+	<?php elseif( has_term('apparel','product_cat') ) : ?>
+		<?php $mobile = wp_get_attachment_image_src(get_field('apparel_banner', 5248), 'banner-mobile'); ?>
+		<?php $tablet = wp_get_attachment_image_src(get_field('apparel_banner', 5248), 'banner-tablet'); ?>
+		<?php $desktop = wp_get_attachment_image_src(get_field('apparel_banner', 5248), 'banner-desktop'); ?>
+		<?php $retina = wp_get_attachment_image_src(get_field('apparel_banner', 5248), 'banner-retina'); ?>
+	<?php endif; ?>
 
 	<picture class="image">
 		<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -93,10 +115,10 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 
 					<div class="portal" id="post-<?php the_ID(); ?>">
 						<a href="<?php the_permalink(); ?>">
-							<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
-							<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
-							<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
-							<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
+							<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
+							<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
+							<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
+							<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
 
 							<picture>
 								<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -116,6 +138,9 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 								<img srcset="<?php echo $desktop_page_banner[0]; ?>">
 							</picture>
 							<div class="overlay">&nbsp;</div>
+							<div class="tagline">
+								<h2><?php the_excerpt(); ?></h2>
+							</div>
 							<h6 class="title">
 								<?php the_title(); ?>
 							</h6>
@@ -168,10 +193,10 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 
 							<div class="portal" id="post-<?php the_ID(); ?>">
 								<a href="<?php the_permalink(); ?>">
-									<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
-									<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
-									<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
-									<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
+									<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
+									<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
+									<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
+									<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
 
 									<picture>
 										<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -191,6 +216,9 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 										<img srcset="<?php echo $desktop_page_banner[0]; ?>">
 									</picture>
 									<div class="overlay">&nbsp;</div>
+									<div class="tagline">
+										<h2><?php the_excerpt(); ?></h2>
+									</div>
 									<h6 class="title">
 										<?php the_title(); ?>
 									</h6>
@@ -238,10 +266,10 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 
 				<div class="portal" id="post-<?php the_ID(); ?>">
 					<a href="<?php the_permalink(); ?>">
-						<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
-						<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
-						<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
-						<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
+						<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
+						<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
+						<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
+						<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
 
 						<picture>
 							<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -261,6 +289,9 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 							<img srcset="<?php echo $desktop_page_banner[0]; ?>">
 						</picture>
 						<div class="overlay">&nbsp;</div>
+						<div class="tagline">
+							<h2><?php the_excerpt(); ?></h2>
+						</div>
 						<h6 class="title">
 							<?php the_title(); ?>
 						</h6>

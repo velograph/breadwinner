@@ -100,6 +100,7 @@ function breadwinner_scripts() {
 
 	wp_enqueue_script( 'breadwinner-slick', get_template_directory_uri() . '/js/slick.min.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'breadwinner-slickLightbox', get_template_directory_uri() . '/js/slick-lightbox.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -197,3 +198,23 @@ function cc_mime_types($mimes) {
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
+
+function add_custom_price( $cart_object ) {
+	$custom_price = 500;
+	$target_product_id = 5820;
+	foreach ( $cart_object->cart_contents as $key => $value ) {
+
+		if ( $value['product_id'] == $target_product_id ) {
+			$value['data']->price = $custom_price - 2395;
+			// $original = $value['data']->price;
+		}
+		/*
+		// If your target product is a variation
+		if ( $value['variation_id'] == $target_product_id ) {
+			$value['data']->price = $custom_price;
+		}
+		*/
+	}
+}

@@ -44,7 +44,7 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
-		<div class="blog-posts">
+		<div class="archive-posts blog-posts">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 

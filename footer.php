@@ -33,14 +33,14 @@
 						<!--[if IE 9]></video><![endif]-->
 						<img srcset="<?php echo $image[0]; ?>">
 					</picture>
-
+					<div class="overlay"></div>
 					<div class="caption">
 						<a href="<?php the_field(); ?>">
 						<?php the_field('bike_portal_text', 5248); ?>
 					</div>
 				</a>
 
-			<?php elseif( is_page('process') ) : ?>
+			<?php elseif( is_page('process') || is_single() || is_product_category( array('goods','apparel','accessories') ) ) : ?>
 
 				<a href="<?php the_field('story_portal_link', 5248); ?>">
 					<?php $mobile = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-mobile'); ?>
@@ -61,14 +61,14 @@
 						<!--[if IE 9]></video><![endif]-->
 						<img srcset="<?php echo $image[0]; ?>">
 					</picture>
-
+					<div class="overlay"></div>
 					<div class="caption">
 						<a href="<?php the_field(); ?>">
 						<?php the_field('story_portal_text', 5248); ?>
 					</div>
 				</a>
 
-			<?php elseif( is_page('story') ) : ?>
+			<?php elseif( is_page('story') || is_product_category( array('bikes','road','dirt','mountain') ) || is_product() ) : ?>
 
 				<a href="<?php the_field('process_portal_link', 5248); ?>">
 					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
@@ -89,14 +89,14 @@
 						<!--[if IE 9]></video><![endif]-->
 						<img srcset="<?php echo $image[0]; ?>">
 					</picture>
-
+					<div class="overlay"></div>
 					<div class="caption">
 						<a href="<?php the_field(); ?>">
 						<?php the_field('process_portal_text', 5248); ?>
 					</div>
 				</a>
 
-			<?php elseif( is_product_category( array('goods','apparel','accessories') ) ) : ?>
+			<?php else : ?>
 
 				<a href="<?php the_field('story_portal_link', 5248); ?>">
 					<?php $mobile = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-mobile'); ?>
@@ -117,66 +117,10 @@
 						<!--[if IE 9]></video><![endif]-->
 						<img srcset="<?php echo $image[0]; ?>">
 					</picture>
-
+					<div class="overlay"></div>
 					<div class="caption">
 						<a href="<?php the_field(); ?>">
 						<?php the_field('story_portal_text', 5248); ?>
-					</div>
-				</a>
-
-			<?php elseif( is_product_category( array('bikes','road','dirt','mountain') ) ) : ?>
-
-				<a href="<?php the_field('process_portal_link', 5248); ?>">
-					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
-					<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
-					<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
-
-					<picture class="image">
-						<!--[if IE 9]><video style="display: none"><![endif]-->
-						<source
-							srcset="<?php echo $mobile[0]; ?>"
-							media="(max-width: 500px)" />
-						<source
-							srcset="<?php echo $tablet[0]; ?>"
-							media="(max-width: 860px)" />
-						<source
-							srcset="<?php echo $desktop[0]; ?>"
-							media="(min-width: 861px)" />
-						<!--[if IE 9]></video><![endif]-->
-						<img srcset="<?php echo $image[0]; ?>">
-					</picture>
-
-					<div class="caption">
-						<a href="<?php the_field(); ?>">
-						<?php the_field('process_portal_text', 5248); ?>
-					</div>
-				</a>
-
-			<?php elseif( is_product() ) : ?>
-
-				<a href="<?php the_field('process_portal_link', 5248); ?>">
-					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
-					<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
-					<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
-
-					<picture class="image">
-						<!--[if IE 9]><video style="display: none"><![endif]-->
-						<source
-							srcset="<?php echo $mobile[0]; ?>"
-							media="(max-width: 500px)" />
-						<source
-							srcset="<?php echo $tablet[0]; ?>"
-							media="(max-width: 860px)" />
-						<source
-							srcset="<?php echo $desktop[0]; ?>"
-							media="(min-width: 861px)" />
-						<!--[if IE 9]></video><![endif]-->
-						<img srcset="<?php echo $image[0]; ?>">
-					</picture>
-
-					<div class="caption">
-						<a href="<?php the_field(); ?>">
-						<?php the_field('process_portal_text', 5248); ?>
 					</div>
 				</a>
 
@@ -206,7 +150,7 @@
 			</picture>
 
 			<div class="content">
-				<h3><?php the_field('mailing_list_text', 5248); ?></h3>
+				<p><?php the_field('mailing_list_text', 5248); ?></p>
 				<?php echo do_shortcode('[epm_mailchimp]'); ?>
 			</div>
 
@@ -262,6 +206,7 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'utility' ) ); ?>
 			</div>
 			<div class="social-media">
+				<h6>Follow Us</h6>
 				<div class="social-media-link facebook">
 					<a href="https://www.facebook.com/BreadwinnerCycles/" target="_blank">
 						<svg viewBox="0 0 18 18">
@@ -302,6 +247,17 @@
 		&copy; <?php the_date('Y'); ?>&nbsp;<?php bloginfo('name'); ?>&nbsp;&mdash;&nbsp;<?php bloginfo('description'); ?>
 	</div>
 
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-20466765-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+	
 <?php wp_footer(); ?>
 
 </body>

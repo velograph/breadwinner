@@ -27,7 +27,7 @@
 				padding: $five $fifteen;
 				position: absolute;
 				text-align: right;
-				width: 50%;
+				width: 33.3%;
 				@include media( $large-screen ) {
 					bottom: 150px;
 					padding: $ten $twentyfive $ten 0;
@@ -53,13 +53,14 @@
 
 .page-title {
 	background: rgba(255,255,255,.9);
-	bottom: 150px;
+	bottom: $hundred;
 	box-shadow: 1px 1px 2px $gray;
 	left: 0;
 	padding: $five $fifteen;
 	position: absolute;
 	text-align: right;
-	width: 50%;
+	text-transform: uppercase;
+	width: 33.3%;
 	@include media( $large-screen ) {
 		padding: $ten $twentyfive $ten 0;
 	}
@@ -90,13 +91,19 @@
 	}
 }
 
+.centered-image {
+	@include outer-container;
+	margin-bottom: $hundred;
+	text-align: center;
+}
+
 .large-open-section-container {
 	@include outer-container;
 	.large-open-section {
 		@include span-columns(10);
 		@include shift(1);
 		padding: $hundred $twentyfive;
-		text-align: center;
+		text-align: left;
 		@include media( $large-screen ) {
 			padding: 0 $hundred $hundred;
 		}
@@ -107,6 +114,19 @@
 		}
 		svg {
 			max-width: 400px;
+		}
+	}
+	.story-logo {
+		text-align: center;
+	}
+}
+
+.page-template-story-php,
+.page-template-process-php {
+	.large-open-section-container {
+		margin-top: $hundred;
+		&.story-logo-container {
+			margin-top: 0;
 		}
 	}
 }
@@ -127,9 +147,12 @@
 		}
 		.image-content {
 			clear: both;
-			padding-top: $twentyfive;
-			text-align: center;
+			padding: $fifty $fifty 0;
 		}
+	}
+	.image-one-after,
+	.image-two-after {
+		margin-bottom: 0;
 	}
 }
 
@@ -177,6 +200,9 @@
 			@include span-columns(6);
 			@include shift(0);
 		}
+		.section-header {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -199,14 +225,15 @@
 	@include outer-container;
 	text-align: center;
 	.button {
+		display: inline-block;
 		font-size: 18px;
 		margin-bottom: $hundred;
-		@include span-columns(4);
-		@include shift(4);
-		@include media( $large-screen ) {
-			@include span-columns(2);
-			@include shift(5);
-		}
+		// @include span-columns(4);
+		// @include shift(4);
+		// @include media( $large-screen ) {
+		// 	@include span-columns(3);
+		// 	@include shift(4);
+		// }
 	}
 }
 
@@ -265,19 +292,25 @@
 			h3 {
 				margin-bottom: $ten;
 			}
-			.epm-form-field {
-				margin: 0 auto;
-				width: 75%;
-				@include media( $large-screen ) {
-					width: 50%;
+			.epm-sign-up-form {
+				.epm-success {
+					background: $orange;
+					font-weight: 700;
 				}
-				.email {
-					background-image: url(../images/mail.svg);
-					background-position: $five center;
-					background-repeat: no-repeat;
-					color: $gray;
-					font-size: 14px;
-					padding: 5px 10px 5px $thirty;
+				.epm-form-field {
+					margin: 0 auto;
+					width: 75%;
+					@include media( $large-screen ) {
+						width: 50%;
+					}
+					.email {
+						background-image: url(../images/mail.svg);
+						background-position: $five center;
+						background-repeat: no-repeat;
+						color: $gray;
+						font-size: 14px;
+						padding: 5px 10px 5px $thirty;
+					}
 				}
 			}
 		}
@@ -307,15 +340,19 @@
 				@include shift(0);
 				margin-bottom: 0;
 			}
-			.step {
-				margin-bottom: $twentyfive;
-			}
-			.title {
-				margin-bottom: $fifteen;
-			}
 			.description {
+				text-align: left;
 				@include media( $large-screen ) {
-					width: 50%;
+					margin: 0 auto;
+					width: 75%;
+				}
+				.step {
+					display: flex;
+					margin-bottom: $twentyfive;
+					h3 {
+						margin-left: $twenty;
+						padding-top: $ten;
+					}
 				}
 			}
 		}
@@ -333,7 +370,6 @@
 			}
 			.description {
 				@include media( $large-screen ) {
-					float: right;
 				}
 			}
 		}
@@ -435,6 +471,26 @@
 	}
 }
 
+.bike-archive {
+	.portal {
+		.tagline {
+			color: $white;
+			opacity: 0;
+			left: 50%;
+			position: absolute;
+			text-align: center;
+			top: 50%;
+			@include transition(opacity .2s ease-in-out);
+			@include transform(translate(-50%,-50%));
+		}
+		&:hover {
+			.tagline {
+				opacity: 1;
+			}
+		}
+	}
+}
+
 .bike-archive,
 .products {
 	@include outer-container;
@@ -482,7 +538,7 @@
 			padding: $five $ten;
 			position: absolute;
 			text-align: right;
-			width: 50%;
+			width: 33.3%;
 		}
 		.overlay {
 			background: $black;
@@ -550,6 +606,29 @@
 				color: $gray;
 				font-size: 14px;
 				font-style: italic;
+			}
+		}
+	}
+}
+
+.faqs {
+	@include outer-container;
+	margin-bottom: $hundred;
+	margin-top: $hundred;
+	.faq-container {
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(8);
+			@include shift(2);
+		}
+		.faq {
+			margin-bottom: $fifty;
+			.question {
+				font-weight: 700;
+			}
+			.answer {
+
 			}
 		}
 	}

@@ -218,13 +218,13 @@ get_header(); ?>
 
 		<!-- End full width banner -->
 
-		<div class="large-open-section-container">
-			<div class="large-open-section">
-				<img src="<?php the_field('company_logo'); ?>" />
-			</div>
+		<div class="centered-image">
+
+			<img src="<?php the_field('company_logo'); ?>" />
+
 		</div>
 
-		<!-- End Large copy section -->
+		<!-- End centered image section -->
 
 		<?php get_template_part('bike', 'portals'); ?>
 

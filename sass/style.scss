@@ -23,6 +23,7 @@
 @import "product";
 @import "modules";
 @import "blog";
+@import "woo";
 @import "footer";
 
 html,
@@ -82,15 +83,16 @@ body {
 		text-align: center;
 		.inner-container {
 			@include outer-container;
-			font-size: $h4-font-size;
 			font-weight: 400;
 			padding: $ten 0;
 			text-align: center;
 			.button {
 				background: transparent;
 				color: $white;
-				font-size: $h3-font-size;
 				font-weight: 700;
+				&:hover {
+					color: $light_blue;
+				}
 			}
 		}
 	}

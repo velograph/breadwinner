@@ -26,7 +26,7 @@ get_header( 'shop' ); ?>
 		jQuery('.full-width-slider').slick({
 			arrows: true,
 			dots: false,
-			autoplay: true,
+			autoplay: false,
 			autoplaySpeed: 3000,
 			pauseOnHover: true,
 			accessibility: false,
@@ -43,6 +43,10 @@ get_header( 'shop' ); ?>
 			accessibility: false,
 			mobileFirst: false,
 		    lazyLoad: 'ondemand',
+		});
+
+		// This is the lightbox wrapper for the highlight gallery
+		jQuery('.highlight-gallery').slickLightbox({
 		});
 
 		jQuery('.highlight-gallery').slick({

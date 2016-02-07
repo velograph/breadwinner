@@ -100,6 +100,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'woocommerce_before_main_content' );
 		?>
 
+		<script>
+		</script>
+
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="large-open-section-container">
@@ -110,8 +113,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="section-title">
 
-				<h2><?php the_field('builder_title'); ?></h2>
+				<h2><?php the_field('configurator_title'); ?></h2>
 
+			</div>
+
+			<div class="large-open-section-container">
+				<div class="large-open-section">
+					<?php the_field('guiding_text', 5248); ?>
+				</div>
 			</div>
 
 			<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -175,16 +184,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 							 */
 							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 							do_action( 'woocommerce_single_product_summary' );
 						?>
 
-						<div class="current-price">
-							<h4>Total:</h4>
-							<!-- The h1 here is receiving the updated price from the Review step -->
-							<h1></h1>
-							<div class="disclaimer">
-								<em><?php the_field('deposit_disclaimer', 5248); ?></em>
+						<!-- <div class="skip-to-review">
+							<a>Just want a frameset? Skip to Review.</a>
+						</div> -->
+
+						<div class="current-configuration">
+
+							<div class="current-price">
+								<h4>Total:</h4>
+								<!-- The h1 here is receiving the updated price from the Review step -->
+								<h1></h1>
+								<div class="disclaimer">
+									<em><?php the_field('deposit_disclaimer', 5248); ?></em>
+								</div>
+
+
+							</div>
+
+							<div class="user-choices">
+
+								<div class="frame">
+									<strong>Frame:</strong>
+									<span></span>
+								</div>
+
+								<div class="paint">
+									<strong>Paint:</strong>
+									<span></span>
+								</div>
+
+								<div class="drivetrain">
+									<strong>Drivetrain:</strong>
+									<span></span>
+								</div>
+
+								<div class="cockpit">
+									<strong>Cockpit:</strong>
+									<span></span>
+								</div>
+
+								<div class="wheelset">
+									<strong>Wheelset:</strong>
+									<span></span>
+								</div>
+
 							</div>
 
 						</div>
@@ -195,11 +243,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				<div class="section-header">
 
-					<h4>Highlights</h4>
+					<h4>Features &amp; Options</h4>
 
 				</div>
-
-				<!-- End Section header -->
 
 				<div class="highlight-gallery">
 
@@ -213,27 +259,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php foreach( $images as $image ): ?>
 
 								<div class="highlight-image">
-									<picture>
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
-											media="(max-width: 500px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
-											media="(max-width: 860px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
-											media="(max-width: 1180px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-retina']; ?>"
-											media="(min-width: 1181px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $image[0]; ?>">
-									</picture>
+									<a href="<?php echo $image[url]; ?>">
+										<picture>
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+												media="(max-width: 500px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+												media="(max-width: 860px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+												media="(max-width: 1180px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+												media="(min-width: 1181px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img srcset="<?php echo $image[0]; ?>">
+										</picture>
 
-									<div class="highlight-caption">
-										<?php echo $image['caption']; ?>
-									</div>
+										<div class="highlight-caption">
+											<?php echo $image['caption']; ?>
+										</div>
+									</a>
 
 								</div>
 
@@ -244,13 +292,48 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				</div>
 
+				<div class="image-with-content">
+
+					<div class="content">
+						<div class="section-header">
+
+							<h4>Geometry</h4>
+
+						</div>
+
+						<?php the_field('bike_diagram_text', 5248); ?>
+					</div>
+
+					<div class="image">
+
+						<?php $mobile = wp_get_attachment_image_src(get_field('bike_drawing'), 'portal-mobile'); ?>
+						<?php $tablet = wp_get_attachment_image_src(get_field('bike_drawing'), 'portal-tablet'); ?>
+						<?php $desktop = wp_get_attachment_image_src(get_field('bike_drawing'), 'portal-desktop'); ?>
+
+						<picture>
+							<!--[if IE 9]><video style="display: none"><![endif]-->
+							<source
+								srcset="<?php echo $mobile[0]; ?>"
+								media="(max-width: 500px)" />
+							<source
+								srcset="<?php echo $tablet[0]; ?>"
+								media="(max-width: 860px)" />
+							<source
+								srcset="<?php echo $desktop[0]; ?>"
+								media="(min-width: 861px)" />
+							<!--[if IE 9]></video><![endif]-->
+							<img srcset="<?php echo $image[0]; ?>">
+						</picture>
+
+					</div>
+
+				</div>
+
 				<div class="section-header">
 
 					<h4>Specs</h4>
 
 				</div>
-
-				<!-- End Section header -->
 
 				<div class="specs">
 
@@ -272,8 +355,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php endif; ?>
 
 				</div>
-
-				<!-- End bike specs -->
 
 				<?php
 					/**
@@ -470,23 +551,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<div class="summary entry-summary">
 
-				<?php
-					/**
-					 * woocommerce_single_product_summary hook
-					 *
-					 * @hooked woocommerce_template_single_title - 5
-					 * @hooked woocommerce_template_single_rating - 10
-					 * @hooked woocommerce_template_single_price - 10
-					 * @hooked woocommerce_template_single_excerpt - 20
-					 * @hooked woocommerce_template_single_add_to_cart - 30
-					 * @hooked woocommerce_template_single_meta - 40
-					 * @hooked woocommerce_template_single_sharing - 50
-					 */
-					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-					do_action( 'woocommerce_single_product_summary' );
-				?>
+				<?php global $product; ?>
+				<?php if( $product->is_type( 'simple' ) ) : ?>
+					<div class="simple-product">
+			  	<?php elseif( $product->is_type( 'variable' ) ) : ?>
+					<div class="variable-product">
+				<?php endif; ?>
+					<?php
+						/**
+						 * woocommerce_single_product_summary hook
+						 *
+						 * @hooked woocommerce_template_single_title - 5
+						 * @hooked woocommerce_template_single_rating - 10
+						 * @hooked woocommerce_template_single_price - 10
+						 * @hooked woocommerce_template_single_excerpt - 20
+						 * @hooked woocommerce_template_single_add_to_cart - 30
+						 * @hooked woocommerce_template_single_meta - 40
+						 * @hooked woocommerce_template_single_sharing - 50
+						 */
+						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+						do_action( 'woocommerce_single_product_summary' );
+					?>
+				</div>
 
 
 				<div class="product-content">
