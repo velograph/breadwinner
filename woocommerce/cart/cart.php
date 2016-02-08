@@ -13,6 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wc_print_notices();
 
+// global $woocommerce;
+// var_dump( $woocommerce->cart->get_cart() );
+
 do_action( 'woocommerce_before_cart' ); ?>
 
 <form action="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" method="post">

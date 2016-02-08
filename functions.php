@@ -199,22 +199,56 @@ function cc_mime_types($mimes) {
 }
 add_filter('upload_mimes', 'cc_mime_types');
 
+add_action('woocommerce_add_to_cart', 'replace_price');
+
+function replace_price($price) {
+	var_dump($price);
+
+}
+
 add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
 
 function add_custom_price( $cart_object ) {
-	$custom_price = 500;
-	$target_product_id = 5820;
+	// return;
+	$numItems = count($cart_object->cart_contents);
+	// echo "There are $numItems items in the cart <br />";
 	foreach ( $cart_object->cart_contents as $key => $value ) {
+		$composite_children_keys = $value['composite_children'];
 
-		if ( $value['product_id'] == $target_product_id ) {
-			$value['data']->price = $custom_price - 2395;
-			// $original = $value['data']->price;
-		}
-		/*
-		// If your target product is a variation
-		if ( $value['variation_id'] == $target_product_id ) {
-			$value['data']->price = $custom_price;
-		}
-		*/
+			// if the item does not have 'composite_children', skip processing it
+			if(!is_array($composite_children_keys)) continue;
+
+			foreach($composite_children_keys as $childKey) {
+				$child_line_item = $cart_object->cart_contents[$childKey];
+				$child_line_item['data']->price = 0.0;
+				// Bundles within composites show up under 'bundled_items'
+				$grandchild_keys = $child_line_item['bundled_items'];
+				if(!is_array($grandchild_keys)) continue;
+				foreach($grandchild_keys as $grand_child_key) {
+					$grand_child_line_item = $cart_object->cart_contents[$grand_child_key];
+					$grand_child_line_item['data']->price = 0.0;
+				}
+			}
+
+			$value['data']->price = 500.00;
+
+		// echo "<pre><h1>$key</h1>";
+		// var_dump(array_keys($value));
+		// var_dump($value['composite_children']);
+		// var_dump($value['title']);
+		// var_dump($value['line_subtotal']);
+		// var_dump($value['bundled_by']);
+		// var_dump($value['bundled_items']);
+		// echo "</pre>";
+
+		// Get the composite price from Single Product Template
+		// $price = get_post_meta($value['data'] , '_price', true);
+		//
+		// if ( $value['product_id'] == 5820 ) {
+		// 	// Lolo
+		// 	$value['data']->price = $deposit - $price;
+		// }
 	}
+	// die();
+
 }
