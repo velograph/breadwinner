@@ -202,7 +202,6 @@ add_filter('upload_mimes', 'cc_mime_types');
 add_action('woocommerce_add_to_cart', 'replace_price');
 
 function replace_price($price) {
-	var_dump($price);
 
 }
 
