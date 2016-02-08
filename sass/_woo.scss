@@ -27,6 +27,11 @@
 				margin-bottom: $ten;
 			}
 		}
+		.product-price {
+			.amount {
+				display: none;
+			}
+		}
 		.product-quantity {
 			input {
 				margin: 0 auto;
@@ -57,7 +62,7 @@
 			}
 		}
 		.product-name,
-		.product-price,
+		// .product-price,
 		.product-quantity,
 		.product-subtotal {
 			.section-title {

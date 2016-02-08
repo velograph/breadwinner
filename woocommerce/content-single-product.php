@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									srcset="<?php echo $image['sizes']['portal-retina']; ?>"
 									media="(min-width: 1181px)" />
 								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $image[0]; ?>">
+								<img data-lazy="<?php echo $image[0]; ?>">
 							</picture>
 
 						</div>
@@ -159,7 +159,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 								srcset="<?php echo $retina[0]; ?>"
 								media="(min-width: 1181px)" />
 							<!--[if IE 9]></video><![endif]-->
-							<img srcset="<?php echo $image[0]; ?>">
+							<img data-lazy="<?php echo $image[0]; ?>">
 						</picture>
 
 						<div class="small-image-caption">
@@ -188,10 +188,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 							do_action( 'woocommerce_single_product_summary' );
 						?>
-
-						<!-- <div class="skip-to-review">
-							<a>Just want a frameset? Skip to Review.</a>
-						</div> -->
 
 						<div class="current-configuration">
 
@@ -275,7 +271,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 												srcset="<?php echo $image['sizes']['portal-retina']; ?>"
 												media="(min-width: 1181px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img srcset="<?php echo $image[0]; ?>">
+											<img data-lazy="<?php echo $image[0]; ?>">
 										</picture>
 
 										<div class="highlight-caption">
