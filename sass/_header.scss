@@ -47,12 +47,14 @@
 			.mobile-navigation {
 				@include span-columns(3);
 				@include shift(3);
+				margin-top: $twentyfive;
 				li {
-					margin-bottom: $five;
+					margin-bottom: $ten;
 				}
 			}
 			.utility-links {
 				@include span-columns(3);
+				margin-top: $twentyfive;
 				text-align: right;
 				div {
 					margin-bottom: $five;
@@ -66,7 +68,7 @@
 			.mobile-search-form {
 				@include span-columns(6);
 				@include shift(3);
-				padding: $twenty 0;
+				padding: $twentyfive 0;
 				input {
 					border: none;
 					font-size: 12px;
@@ -87,7 +89,7 @@
 				display: none;
 				@include media( $large-screen ) {
 					display: block;
-					padding-left: $twentyfive;
+					padding-left: $ten;
 				}
 				.menu-item {
 					border-top-color: $dark_blue;
@@ -99,9 +101,14 @@
 					padding: 4.5% 0%;
 					a {
 						color: $white;
-						font-size: 18px;
 						font-weight: 700;
 						text-transform: uppercase;
+						@include media( $medium-screen ) {
+							font-size: 16px;
+						}
+						@include media( $large-screen ) {
+							font-size: 18px;
+						}
 						&:hover {
 							color: $light_blue;
 						}

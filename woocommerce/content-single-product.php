@@ -288,7 +288,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 				</div>
 
-				<div class="image-with-content">
+				<div class="geometry-image-with-content image-with-content">
 
 					<div class="content">
 						<div class="section-header">
@@ -297,7 +297,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 						</div>
 
-						<?php the_field('bike_diagram_text', 5248); ?>
+						<div class="geometry-text">
+							<?php the_field('bike_diagram_text', 5248); ?>
+						</div>
 					</div>
 
 					<div class="image">
