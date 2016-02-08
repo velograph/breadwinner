@@ -50,6 +50,21 @@
 		}
 	}
 	.component_table_item,
+	.bundled_table_item {
+		.product-price {
+			.section-title,
+			.amount {
+				visibility: hidden;
+			}
+		}
+	}
+	.component_table_item,
+	.bundled_table_item {
+		.product-subtotal {
+			visibility: hidden;
+		}
+	}
+	.component_table_item,
 	.bundled_table_item,
 	.bundle_table_item {
 		div {
@@ -61,8 +76,8 @@
 				visibility: hidden;
 			}
 		}
+
 		.product-name,
-		// .product-price,
 		.product-quantity,
 		.product-subtotal {
 			.section-title {

@@ -209,9 +209,20 @@ function replace_price($price) {
 add_action( 'woocommerce_before_calculate_totals', 'add_custom_price' );
 
 function add_custom_price( $cart_object ) {
-	// return;
+
 	$numItems = count($cart_object->cart_contents);
 	// echo "There are $numItems items in the cart <br />";
+
+	// echo "<pre><h1>$key</h1>";
+	// var_dump(array_keys($value));
+	// var_dump($value['composite_children']);
+	// var_dump($value['title']);
+	// var_dump($value['line_subtotal']);
+	// var_dump($value['bundled_by']);
+	// var_dump($value['bundled_items']);
+	// echo "</pre>";
+	// die();
+
 	foreach ( $cart_object->cart_contents as $key => $value ) {
 		$composite_children_keys = $value['composite_children'];
 
@@ -232,23 +243,6 @@ function add_custom_price( $cart_object ) {
 
 			$value['data']->price = 500.00;
 
-		// echo "<pre><h1>$key</h1>";
-		// var_dump(array_keys($value));
-		// var_dump($value['composite_children']);
-		// var_dump($value['title']);
-		// var_dump($value['line_subtotal']);
-		// var_dump($value['bundled_by']);
-		// var_dump($value['bundled_items']);
-		// echo "</pre>";
-
-		// Get the composite price from Single Product Template
-		// $price = get_post_meta($value['data'] , '_price', true);
-		//
-		// if ( $value['product_id'] == 5820 ) {
-		// 	// Lolo
-		// 	$value['data']->price = $deposit - $price;
-		// }
 	}
-	// die();
 
 }
