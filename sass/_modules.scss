@@ -21,30 +21,18 @@
 				height: calc(100vh - 100px);
 			}
 			.slide-caption {
-				background: $white;
-				bottom: $twentyfive;
-				left: 0;
-				padding: $five $fifteen;
-				position: absolute;
-				text-align: right;
-				width: 33.3%;
+				padding-left: $ten;
+				text-align: left;
 				@include media( $large-screen ) {
 					bottom: 150px;
 					padding: $ten $twentyfive $ten 0;
-				}
-				a {
-					color: $black;
-					font: {
-						size: 18px;
-					}
-					@include media( $large-screen ) {
-						font: {
-							size: 36px;
-						}
-					}
-					&:hover {
-						color: $dark_blue;
-					}
+					background: $white;
+					bottom: $twentyfive;
+					left: 0;
+					padding: $five $fifteen;
+					position: absolute;
+					text-align: right;
+					width: 33.3%;
 				}
 			}
 		}
@@ -93,8 +81,16 @@
 
 .centered-image {
 	@include outer-container;
-	margin-bottom: $hundred;
 	text-align: center;
+	img {
+		width: 50%;
+	}
+	@include media( $large-screen ) {
+		margin-bottom: $hundred;
+		img {
+			width: auto;
+		}
+	}
 }
 
 .large-open-section-container {
@@ -102,7 +98,7 @@
 	.large-open-section {
 		@include span-columns(10);
 		@include shift(1);
-		padding: $hundred $twentyfive;
+		padding: $fifty $twentyfive;
 		text-align: left;
 		@include media( $large-screen ) {
 			padding: 0 $hundred $hundred;
@@ -153,6 +149,12 @@
 	.image-one-after,
 	.image-two-after {
 		margin-bottom: 0;
+	}
+	.image-two {
+		margin-bottom: 0;
+		@include media( $large-screen ) {
+			margin-bottom: $fifty;
+		}
 	}
 }
 
@@ -314,6 +316,12 @@
 				}
 			}
 		}
+		&:last-child {
+			margin-bottom: 0;
+			@include media( $large-screen ) {
+				margin-bottom: $fifty;
+			}
+		}
 	}
 }
 
@@ -351,7 +359,7 @@
 					margin-bottom: $twentyfive;
 					h3 {
 						margin-left: $twenty;
-						padding-top: $ten;
+						padding-top: $five;
 					}
 				}
 			}
@@ -404,6 +412,14 @@
 				@include media( $large-screen ) {
 					@include span-columns(10);
 				}
+				p {
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -500,10 +516,18 @@
 		@include span-columns(12);
 		margin-bottom: $fifty;
 		position: relative;
-		@include media( $large-screen ) {
+		@include media( $medium-screen ) {
 			@include span-columns(6);
 			@include omega(2n);
 		}
+		@include media( $large-screen ) {
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.portal-container:last-child {
+		margin-bottom: 0;
 	}
 }
 

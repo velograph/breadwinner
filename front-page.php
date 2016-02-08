@@ -345,7 +345,7 @@ get_header(); ?>
 
 		<div class="large-button">
 
-			<a href="/process" class="button">Learn More</a>
+			<a href="/process" class="button">Learn More about Our Process</a>
 
 		</div>
 

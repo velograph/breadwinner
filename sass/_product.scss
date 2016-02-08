@@ -275,6 +275,14 @@
 	}
 }
 
+.geometry-image-with-content {
+	.content {
+		.geometry-text {
+			padding: $fifty 0;
+		}
+	}
+}
+
 .skip-to-review {
 	@include row();
 	margin-bottom: $fifty;
