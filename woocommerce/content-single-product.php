@@ -72,10 +72,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		</div>
 
-		<div class="page-title">
+		<!-- <div class="page-title">
 			<?php the_title(); ?>
 		</div>
-
+ -->
 		<div class="scroll-for-content">
 
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
