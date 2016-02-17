@@ -17,6 +17,7 @@
 			@include media( $large-screen ) {
 				@include span-columns(3);
 				@include shift(0);
+				height: $hundred;
 				padding-bottom: 1.5%;
 				padding-top: 1.75%;
 			}
@@ -138,6 +139,7 @@
 			}
 		}
 		svg {
+			height: $twentyfive;
 			width: $twenty;
 		}
 		.utility-link {

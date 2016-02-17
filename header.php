@@ -15,6 +15,10 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<!--[if IE ]>
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/ie.css">
+<![endif]-->
+
 <?php wp_head(); ?>
 </head>
 
@@ -96,11 +100,11 @@
 					</div>
 				</div>
 
-				<form role="search" method="get" class="mobile-search-form" action="<?php echo site_url(); ?>">
+				<!-- <form role="search" method="get" class="mobile-search-form" action="<?php echo site_url(); ?>">
 					<label>
 						<input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:" />
 					</label>
-				</form>
+				</form> -->
 
 			</div>
 

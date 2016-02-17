@@ -446,6 +446,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 											<img src="<?php the_sub_field('step_number'); ?>" alt="step number" />
 										</div>
 										<div class="summary">
+											<strong><?php the_sub_field('step_title'); ?></strong>
 											<?php the_sub_field('step_quick_summary'); ?>
 										</div>
 

@@ -14,7 +14,7 @@
 
 			<?php if( is_front_page() ) : ?>
 
-				<a href="<?php the_field('bike_portal_link', 5248); ?>">
+				<a href="/product-category/bikes/">
 					<?php $mobile = wp_get_attachment_image_src(get_field('bike_portal_image', 5248), 'portal-mobile'); ?>
 					<?php $tablet = wp_get_attachment_image_src(get_field('bike_portal_image', 5248), 'portal-tablet'); ?>
 					<?php $desktop = wp_get_attachment_image_src(get_field('bike_portal_image', 5248), 'portal-desktop'); ?>
@@ -42,7 +42,7 @@
 
 			<?php elseif( is_page('process') || is_single() || is_product_category( array('goods','apparel','accessories') ) ) : ?>
 
-				<a href="<?php the_field('story_portal_link', 5248); ?>">
+				<a href="/story">
 					<?php $mobile = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-mobile'); ?>
 					<?php $tablet = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-tablet'); ?>
 					<?php $desktop = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-desktop'); ?>
@@ -63,14 +63,14 @@
 					</picture>
 					<div class="overlay"></div>
 					<div class="caption">
-						<a href="<?php the_field(); ?>">
+						<a href="/story">
 						<?php the_field('story_portal_text', 5248); ?>
 					</div>
 				</a>
 
 			<?php elseif( is_page('story') || is_product_category( array('bikes','road','dirt','mountain') ) || is_product() ) : ?>
 
-				<a href="<?php the_field('process_portal_link', 5248); ?>">
+				<a href="/process">
 					<?php $mobile = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-mobile'); ?>
 					<?php $tablet = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-tablet'); ?>
 					<?php $desktop = wp_get_attachment_image_src(get_field('process_portal_image', 5248), 'portal-desktop'); ?>
@@ -91,14 +91,14 @@
 					</picture>
 					<div class="overlay"></div>
 					<div class="caption">
-						<a href="<?php the_field(); ?>">
+						<a href="/process">
 						<?php the_field('process_portal_text', 5248); ?>
 					</div>
 				</a>
 
 			<?php else : ?>
 
-				<a href="<?php the_field('story_portal_link', 5248); ?>">
+				<a href="/story">
 					<?php $mobile = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-mobile'); ?>
 					<?php $tablet = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-tablet'); ?>
 					<?php $desktop = wp_get_attachment_image_src(get_field('story_portal_image', 5248), 'portal-desktop'); ?>
@@ -119,7 +119,7 @@
 					</picture>
 					<div class="overlay"></div>
 					<div class="caption">
-						<a href="<?php the_field(); ?>">
+						<a href="/story">
 						<?php the_field('story_portal_text', 5248); ?>
 					</div>
 				</a>
@@ -257,7 +257,7 @@
 	  ga('send', 'pageview');
 
 	</script>
-	
+
 <?php wp_footer(); ?>
 
 </body>

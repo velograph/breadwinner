@@ -247,7 +247,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 	$children = get_term_children($term->term_id, get_query_var('taxonomy')); // get children
 	if(($parent->term_id!="" && sizeof($children)>0)) : ?>
 
-		<!-- echo 'has parent and child'; -->
+		echo 'has parent and child';
 
 	<?php elseif(($parent->term_id!="") && (sizeof($children)==0)) : ?>
 
@@ -289,9 +289,6 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 							<img srcset="<?php echo $desktop_page_banner[0]; ?>">
 						</picture>
 						<div class="overlay">&nbsp;</div>
-						<div class="tagline">
-							<h2><?php the_excerpt(); ?></h2>
-						</div>
 						<h6 class="title">
 							<?php the_title(); ?>
 						</h6>
