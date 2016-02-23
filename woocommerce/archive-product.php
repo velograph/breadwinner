@@ -247,7 +247,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 	$children = get_term_children($term->term_id, get_query_var('taxonomy')); // get children
 	if(($parent->term_id!="" && sizeof($children)>0)) : ?>
 
-		echo 'has parent and child';
+		<!-- echo 'has parent and child'; -->
 
 	<?php elseif(($parent->term_id!="") && (sizeof($children)==0)) : ?>
 
@@ -340,10 +340,10 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 
 				<div class="portal" id="post-<?php the_ID(); ?>">
 					<a href="<?php the_permalink(); ?>">
-						<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
-						<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
-						<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
-						<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
+						<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
+						<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
+						<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
+						<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
 
 						<picture>
 							<!--[if IE 9]><video style="display: none"><![endif]-->

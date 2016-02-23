@@ -245,3 +245,16 @@ function add_custom_price( $cart_object ) {
 	}
 
 }
+
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );
+
+function woo_custom_cart_button_text() {
+    global $product;
+    if ( has_term( 'bikes', 'product_cat', $product->ID ) ) {
+		return __( 'Place Deposit', 'woocommerce' );
+	}
+	else {
+		return __( 'Add to Cart', 'woocommerce' );
+	}
+    // endif;
+}

@@ -129,7 +129,7 @@
 					margin-bottom: $ten;
 					padding: 0 $ten 0 0;
 					h4 {
-						font-size: 12px;
+						font-size: 14px;
 						font-weight: 400;
 					}
 					label {
@@ -182,7 +182,6 @@
 			[data-nav_title="Cockpit"],
 			[data-nav_title="Wheelset"] {
 				.component_selections {
-					margin-bottom: $fifty;
 					@include media( $large-screen ) {
 						width: 75%;
 					}
@@ -275,10 +274,18 @@
 	}
 }
 
-.geometry-image-with-content {
+.image-with-content.geometry-image-with-content {
 	.content {
+		@include media( $large-screen ) {
+			@include span-columns(5);
+		}
 		.geometry-text {
-			padding: $fifty 0;
+			padding: 0 0 $fifty;
+		}
+	}
+	.image {
+		@include media( $large-screen ) {
+			@include span-columns(7);
 		}
 	}
 }
@@ -329,11 +336,20 @@
 		margin-bottom: $hundred;
 	}
 	.image {
-		@include span-columns(8);
-		position: relative;
+		@include media( $large-screen ) {
+			@include span-columns(8);
+			position: relative;
+		}
 	}
 	.summary {
-		@include span-columns(4);
+		@include span-columns(10);
+		@include shift(1);
+		padding: $twentyfive 0;
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(0);
+			padding: 0;
+		}
 		.in-stock {
 			display: none;
 		}
@@ -393,12 +409,17 @@
 						}
 					}
 					.single_add_to_cart_button {
-						@include span-columns(6);
-						@include shift(2);
+						@include span-columns(8);
 						@include omega;
+						@include media( $large-screen ) {
+							@include span-columns(6);
+						}
 					}
 				}
 			}
+		}
+		.reset_variations {
+			display: none;
 		}
 	}
 }

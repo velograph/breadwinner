@@ -1,7 +1,7 @@
 .page-template-front-page {
 	.full-width-slider {
 		@include media( $large-screen ) {
-			margin-bottom: $hundred;
+			margin-bottom: $fifty;
 		}
 	}
 }
@@ -11,14 +11,12 @@
 	position: relative;
 	width: 100vw;
 	@include media( $large-screen ) {
-		height: calc(100vh - 100px);
 		width: 100%;
 	}
 	.slick-list {
 		.slide {
 			position: relative;
 			@include media( $large-screen ) {
-				height: calc(100vh - 100px);
 			}
 			.slide-caption {
 				padding-left: $ten;
@@ -101,7 +99,7 @@
 		padding: $fifty $twentyfive;
 		text-align: left;
 		@include media( $large-screen ) {
-			padding: 0 $hundred $hundred;
+			padding: 0 $fifty $fifty;
 		}
 		h3 {
 			p:last-child {
@@ -120,7 +118,7 @@
 .page-template-story-php,
 .page-template-process-php {
 	.large-open-section-container {
-		margin-top: $hundred;
+		margin-top: $fifty;
 		&.story-logo-container {
 			margin-top: 0;
 		}
@@ -136,7 +134,6 @@
 		@include media( $large-screen ) {
 			@include span-columns(6);
 			@include omega(2n);
-			margin-bottom: $hundred;
 		}
 		img {
 			float: left;
@@ -152,9 +149,6 @@
 	}
 	.image-two {
 		margin-bottom: 0;
-		@include media( $large-screen ) {
-			margin-bottom: $fifty;
-		}
 	}
 }
 
@@ -378,11 +372,15 @@
 			}
 			.description {
 				@include media( $large-screen ) {
+					float: right;
 				}
 			}
 		}
 	}
 	.even-row {
+		.description {
+			float: left;
+		}
 	}
 }
 
@@ -531,7 +529,12 @@
 	}
 }
 
-.goods-archive {
+.breadwinner-search-results {
+	text-align: center;
+}
+
+.goods-archive,
+.breadwinner-search-results {
 	@include outer-container;
 	margin-bottom: $hundred;
 	.portal,
@@ -549,7 +552,8 @@
 .bike-archive,
 .products,
 .portal-container,
-.goods-archive {
+.goods-archive,
+.breadwinner-search-results {
 	.portal,
 	.content-portal,
 	.product {
@@ -584,12 +588,10 @@
 
 .specs {
 	@include outer-container;
-	border-bottom: 1px solid $black;
-	margin-bottom: $hundred;
-	padding-bottom: $fifty;
-	padding-top: $twentyfive;
 	.spec-container {
 		@include media( $large-screen ) {
+			@include span-columns(10);
+			@include shift(1);
 			@include columns(2);
 		}
 		.spec {
@@ -601,7 +603,7 @@
 				display: inline-block;
 				list-style-type: none;
 				margin-left: 0;
-				padding: $five 20%;
+				padding: 0 20%;
 			}
 		}
 	}

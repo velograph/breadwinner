@@ -26,12 +26,12 @@ get_header( 'shop' ); ?>
 		jQuery('.full-width-slider').slick({
 			arrows: true,
 			dots: false,
-			autoplay: false,
+			autoplay: true,
 			autoplaySpeed: 3000,
-			pauseOnHover: true,
+			pauseOnHover: false,
 			accessibility: false,
 			mobileFirst: false,
-		    lazyLoad: 'ondemand',
+		    lazyLoad: 'progressive',
 		});
 
 		jQuery('.product-gallery').slick({
@@ -42,7 +42,7 @@ get_header( 'shop' ); ?>
 			pauseOnHover: true,
 			accessibility: false,
 			mobileFirst: false,
-		    lazyLoad: 'ondemand',
+		    lazyLoad: 'progressive',
 		});
 
 		// This is the lightbox wrapper for the highlight gallery

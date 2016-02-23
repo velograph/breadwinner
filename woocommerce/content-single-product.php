@@ -48,16 +48,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<picture>
 								<!--[if IE 9]><video style="display: none"><![endif]-->
 								<source
-									srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+									srcset="<?php echo $image['sizes']['full-width-slider-mobile']; ?>"
 									media="(max-width: 500px)" />
 								<source
-									srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+									srcset="<?php echo $image['sizes']['full-width-slider-tablet']; ?>"
 									media="(max-width: 860px)" />
 								<source
-									srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+									srcset="<?php echo $image['sizes']['full-width-slider-desktop']; ?>"
 									media="(max-width: 1180px)" />
 								<source
-									srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+									srcset="<?php echo $image['sizes']['full-width-slider-retina']; ?>"
 									media="(min-width: 1181px)" />
 								<!--[if IE 9]></video><![endif]-->
 								<img data-lazy="<?php echo $image[0]; ?>">
@@ -76,17 +76,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php the_title(); ?>
 		</div>
  -->
-		<div class="scroll-for-content">
-
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-				 y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-			<path d="M13.418,7.859c0.271-0.268,0.709-0.268,0.978,0c0.27,0.268,0.272,0.701,0,0.969l-3.908,3.83
-				c-0.27,0.268-0.707,0.268-0.979,0l-3.908-3.83c-0.27-0.267-0.27-0.701,0-0.969c0.271-0.268,0.709-0.268,0.978,0L10,11L13.418,7.859z
-				"/>
-			</svg>
-
-		</div>
-
 	<?php endwhile; // end of the loop. ?>
 
 
@@ -111,9 +100,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 			</div>
 
-			<div class="section-title">
+			<div class="section-header">
 
-				<h2><?php the_field('configurator_title'); ?></h2>
+				<h4>Bike Builder</h4>
 
 			</div>
 
@@ -351,6 +340,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</ul>
 
 					<?php endif; ?>
+
+				</div>
+
+				<div class="section-header">
+
+					<h4>Our Process</h4>
 
 				</div>
 

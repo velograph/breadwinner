@@ -217,10 +217,17 @@
 .woocommerce-checkout {
 	.woocommerce-info {
 		@include row();
+		clear: both;
 		margin-bottom: $twentyfive;
 	}
 	.checkout_coupon {
+		text-align: center;
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(3);
+		}
 		input[type="text"] {
+			margin: 0 auto;
 			width: 25%;
 		}
 		input[type="submit"] {
@@ -231,11 +238,28 @@
 			}
 		}
 	}
+	.entry-content {
+		@include outer-container;
+		@include media( $large-screen ) {
+			padding: $hundred 0;
+		}
+	}
+	.login {
+		@include media( $large-screen ) {
+			@include span-columns(6);
+			@include shift(3);
+		}
+	}
 	.checkout {
-		@include row();
+		@include outer-container;
 		.customer-information {
 			@include media( $large-screen ) {
 				@include span-columns(6);
+			}
+			.woocommerce-shipping-fields {
+				label {
+					display: inline;
+				}
 			}
 		}
 		.gift-certificate,
