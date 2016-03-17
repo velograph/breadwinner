@@ -36,10 +36,6 @@ get_header(); ?>
 			<!--[if IE 9]></video><![endif]-->
 			<img srcset="<?php echo $image[0]; ?>">
 		</picture>
-		<div class="page-title">
-			BLOG
-		</div>
-
 	</div>
 
 	<?php if ( have_posts() ) : ?>
@@ -50,18 +46,41 @@ get_header(); ?>
 
 				<div class="post">
 
-					<div class="content">
-						<?php the_content(); ?>
-						<hr />
-						<?php the_tags(); ?>
-						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
-					</div>
+					<?php if( has_post_format('image', $post->ID) ) : ?>
+						<div class="content">
+							<?php the_title(); ?>
+							<hr />
+							<?php the_tags(); ?>
+							<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
+						</div>
 
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('full'); ?>
-						</a>
-					</div>
+						<div class="image">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail('full'); ?>
+							</a>
+						</div>
+					<?php elseif( has_post_format('aside', $post->ID) ) : ?>
+						<div class="content">
+							<?php the_content(); ?>
+							<hr />
+							<?php the_tags(); ?>
+							<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
+						</div>
+
+						<div class="image">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail('full'); ?>
+							</a>
+						</div>
+					<?php else: ?>
+						<div class="full-width-content">
+							<h2><?php the_title(); ?></h2>
+							<?php the_content(); ?>
+							<hr />
+							<?php the_tags(); ?>
+							<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
+						</div>
+					<?php endif; ?>
 
 				</div>
 

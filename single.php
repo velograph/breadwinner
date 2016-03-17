@@ -44,16 +44,37 @@ get_header(); ?>
 
 			<div class="post">
 
-				<div class="content">
-					<?php the_content(); ?>
-					<hr />
-					<?php the_tags(); ?>
-					<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
-				</div>
+				<?php if( has_post_format('image', $post->ID) ) : ?>
+					<div class="content">
+						<?php the_title(); ?>
+						<hr />
+						<?php the_tags(); ?>
+						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
+					</div>
 
-				<div class="image">
-					<?php the_post_thumbnail('full'); ?>
-				</div>
+					<div class="image">
+						<?php the_post_thumbnail('full'); ?>
+					</div>
+				<?php elseif( has_post_format('aside', $post->ID) ) : ?>
+					<div class="content">
+						<?php the_content(); ?>
+						<hr />
+						<?php the_tags(); ?>
+						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
+					</div>
+
+					<div class="image">
+						<?php the_post_thumbnail('full'); ?>
+					</div>
+				<?php else: ?>
+					<div class="full-width-content">
+						<h2><?php the_title(); ?></h2>
+						<?php the_content(); ?>
+						<hr />
+						<?php the_tags(); ?>
+						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
+					</div>
+				<?php endif; ?>
 
 			</div>
 

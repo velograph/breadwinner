@@ -42,6 +42,12 @@ function breadwinner_setup() {
 	add_theme_support( 'title-tag' );
 
 	/*
+	 * Add Post Formats
+	 *
+	 */
+	add_theme_support( 'post-formats', array( 'aside', 'image' ) );
+
+	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
@@ -90,7 +96,7 @@ add_action( 'widgets_init', 'breadwinner_widgets_init' );
 function breadwinner_scripts() {
 	wp_enqueue_style( 'breadwinner-style', get_stylesheet_directory_uri() . '/css/style.css', false, filemtime(get_stylesheet_directory() . '/css/style.css') );
 
-	wp_enqueue_script( 'breadwinner-site-scripts', get_template_directory_uri() . '/js/site-scripts.js', array(), '20130115', true );
+	wp_enqueue_script( 'breadwinner-site-scripts', get_template_directory_uri() . '/js/site-scripts.js', array(), '20170115', true );
 
 	wp_enqueue_script( 'breadwinner-jQuery', '//code.jquery.com/ui/1.11.4/jquery-ui.js', false, true );
 
@@ -130,6 +136,10 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+add_image_size( 'geo-mobile', '480', '360' );
+add_image_size( 'geo-tablet', '768', '576' );
+add_image_size( 'geo-desktop', '1280', '960' );
 
 add_image_size( 'portal-mobile', '480', '360', 'true' );
 add_image_size( 'portal-tablet', '768', '576', 'true' );
@@ -212,17 +222,18 @@ function add_custom_price( $cart_object ) {
 	$numItems = count($cart_object->cart_contents);
 	// echo "There are $numItems items in the cart <br />";
 
-	// echo "<pre><h1>$key</h1>";
-	// var_dump(array_keys($value));
-	// var_dump($value['composite_children']);
-	// var_dump($value['title']);
-	// var_dump($value['line_subtotal']);
-	// var_dump($value['bundled_by']);
-	// var_dump($value['bundled_items']);
-	// echo "</pre>";
-	// die();
-
 	foreach ( $cart_object->cart_contents as $key => $value ) {
+		// echo "<pre><h1>$key</h1>";
+		// var_dump(array_keys($value));
+		// var_dump(array_keys(get_object_vars($value['data'])));
+		// var_dump($value['composite_children']);
+		// var_dump($value['title']);
+		// var_dump($value['line_subtotal']);
+		// var_dump($value['bundled_by']);
+		// var_dump($value['bundled_items']);
+		// echo "</pre>";
+		// die();
+
 		$composite_children_keys = $value['composite_children'];
 
 			// if the item does not have 'composite_children', skip processing it

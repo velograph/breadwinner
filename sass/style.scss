@@ -44,7 +44,8 @@ body {
 		height: $twentyfive;
 		width: 100%;
 	}
-	.skip-link {
+	.skip-link,
+	.screen-reader-text {
 		clip: rect(1px, 1px, 1px, 1px);
 		position: absolute;
 		text-indent: -9999px;
@@ -95,5 +96,16 @@ body {
 				}
 			}
 		}
+	}
+}
+
+.four-oh-four {
+	padding: $hundred 0 $fifty;
+	h1, p {
+		text-align: center;
+	}
+	.search-form {
+		margin: 0 auto;
+		width: 50%;
 	}
 }

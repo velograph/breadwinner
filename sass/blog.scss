@@ -38,6 +38,16 @@
 				float: left;
 			}
 		}
+		.full-width-content {
+			@include span-columns(12);
+		}
+		.gallery {
+			@include row();
+			.gallery-item {
+				@include span-columns(4);
+				@include omega(3n);
+			}
+		}
 	}
 }
 

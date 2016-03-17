@@ -71,9 +71,6 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 		<img srcset="<?php echo $image[0]; ?>">
 	</picture>
 
-	<div class="page-title">
-		<?php echo $term->name; ?>
-	</div>
 </div>
 
 <?php

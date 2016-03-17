@@ -15,6 +15,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
+<?php if( has_term('single-frame-option', 'product_cat') ) { ?>
+<script>
+	jQuery(window).load(function(){
+		// After the page loads, get rid of the href so paint swatches can't be clicked.
+		jQuery('.composited_product_images a').removeAttr("href");
+
+		frame = jQuery('.first .component_options_select option').attr('data-title');
+		// alert(frame);
+		if ( '.composite_data .first .summary_element_selection .summary_element_content:contains("None")' ) {
+			// alert('yay');
+			jQuery( '.composite_data .first .summary_element_wrapper .summary_element_selection .summary_element_content:first-child' ).replaceWith('<span class="summary_element_content">' + frame + '</span>');
+			jQuery('.current-configuration .frame span').append(frame);
+		}
+	});
+</script>
+<?php } ?>
+
 <?php
 	/**
 	 * woocommerce_before_single_product hook
@@ -244,7 +261,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php foreach( $images as $image ): ?>
 
 								<div class="highlight-image">
-									<a href="<?php echo $image[url]; ?>">
+									<a data-my-caption="<?php echo $image['caption']; ?>" href="<?php echo $image[url]; ?>">
 										<picture>
 											<!--[if IE 9]><video style="display: none"><![endif]-->
 											<source
@@ -293,9 +310,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="image">
 
-						<?php $mobile = wp_get_attachment_image_src(get_field('bike_drawing'), 'portal-mobile'); ?>
-						<?php $tablet = wp_get_attachment_image_src(get_field('bike_drawing'), 'portal-tablet'); ?>
-						<?php $desktop = wp_get_attachment_image_src(get_field('bike_drawing'), 'portal-desktop'); ?>
+						<?php $mobile = wp_get_attachment_image_src(get_field('bike_drawing'), 'geo-mobile'); ?>
+						<?php $tablet = wp_get_attachment_image_src(get_field('bike_drawing'), 'geo-tablet'); ?>
+						<?php $desktop = wp_get_attachment_image_src(get_field('bike_drawing'), 'geo-desktop'); ?>
 
 						<picture>
 							<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -510,23 +527,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<?php foreach( $images as $image ): ?>
 
 								<div class="slide">
-									<picture>
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
-											media="(max-width: 500px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
-											media="(max-width: 860px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
-											media="(max-width: 1180px)" />
-										<source
-											srcset="<?php echo $image['sizes']['portal-retina']; ?>"
-											media="(min-width: 1181px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $image[0]; ?>">
-									</picture>
+									<a href="<?php echo $image[url]; ?>">
+										<picture>
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+												media="(max-width: 500px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+												media="(max-width: 860px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+												media="(max-width: 1180px)" />
+											<source
+												srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+												media="(min-width: 1181px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img srcset="<?php echo $image[0]; ?>">
+										</picture>
+									</a>
 
 								</div>
 
@@ -535,15 +554,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					</div>
 
-					<div class="page-title">
-						<?php the_title(); ?>
-					</div>
-
 				<?php endif; ?>
 
 			</div>
 
 			<div class="summary entry-summary">
+
+				<div class="goods-product-title">
+					<h1><?php the_title(); ?></h1>
+				</div>
 
 				<?php global $product; ?>
 				<?php if( $product->is_type( 'simple' ) ) : ?>
@@ -588,5 +607,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 	</div>
+
+<?php else: ?>
+
+	<?php while ( have_posts() ) : the_post(); ?>
+
+		<?php do_action( 'woocommerce_single_product_summary' ); ?>
+
+	<?php endwhile; ?>
 
 <?php endif; ?>

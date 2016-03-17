@@ -34,6 +34,9 @@ get_header( 'shop' ); ?>
 		    lazyLoad: 'progressive',
 		});
 
+		jQuery('.product-gallery').slickLightbox({
+		});
+
 		jQuery('.product-gallery').slick({
 			arrows: true,
 			dots: false,
@@ -47,6 +50,7 @@ get_header( 'shop' ); ?>
 
 		// This is the lightbox wrapper for the highlight gallery
 		jQuery('.highlight-gallery').slickLightbox({
+			caption: 'my-caption',
 		});
 
 		jQuery('.highlight-gallery').slick({

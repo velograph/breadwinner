@@ -1,12 +1,12 @@
 jQuery(document).ready(function(){
 
 	jQuery(function() {
-		jQuery('.search-form').hide('slow');
+		jQuery('.utility-navigation .search-form').hide('slow');
 		jQuery(".toggle_right_pane").toggle(function() {
-			jQuery('.search-form').show('fade');
-			jQuery( '.search-form input' ).focus();
+			jQuery('.utility-navigation .search-form').show('fade');
+			jQuery( '.utility-navigation .search-form input' ).focus();
 		}, function() {
-			jQuery('.search-form').hide('fade');
+			jQuery('.utility-navigation .search-form').hide('fade');
 		});
 	});
 
@@ -21,7 +21,6 @@ jQuery(document).ready(function(){
 	        scrollTop: jQuery('.scroll-for-content').next().offset().top},
 	        2000);
 	});
-
 
 	$first_price = jQuery('.composite_price .amount').html();
 	jQuery('.current-price h1').append($first_price);
@@ -58,14 +57,5 @@ jQuery(document).ready(function(){
 
 	jQuery('.bundled_table_item a').removeAttr("href");
 
-	// jQuery('.skip-to-review').click(function() {
-	// 	jQuery('.options-style-dropdowns').hide();
-	// 	jQuery('.composite_data').show('blind');
-	// 	jQuery('.skip-to-review').hide();
-	// });
-	//
-});
 
-
-jQuery(window).load(function(){
 });

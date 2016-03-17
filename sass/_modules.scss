@@ -637,6 +637,12 @@
 	}
 }
 
+.slick-lightbox {
+	color: $gray;
+	font-size: 14px;
+	font-style: italic;
+}
+
 .faqs {
 	@include outer-container;
 	margin-bottom: $hundred;

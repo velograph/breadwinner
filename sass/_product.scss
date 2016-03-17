@@ -9,7 +9,10 @@
 .woocommerce-breadcrumb {
 	@include outer-container;
 	margin-bottom: $fifty;
-	padding: $ten 0;
+	padding: $ten;
+	@include media( $large-screen ) {
+		padding: $ten 0;
+	}
 }
 
 .product-cat-bikes {
@@ -244,6 +247,9 @@
 											strong {
 												display: none;
 											}
+											&:first-child {
+												// display: none;
+											}
 										}
 										.summary_element_selection_prompt {
 											display: inline;
@@ -304,13 +310,17 @@
 .current-configuration {
 	@include outer-container;
 	.current-price {
-		@include span-columns(6);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
 		h4 {
 			color: $light_blue;
 		}
 	}
 	.user-choices {
-		@include span-columns(6);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
 		.drivetrain,
 		.cockpit,
 		.wheelset {
@@ -353,9 +363,15 @@
 		.in-stock {
 			display: none;
 		}
+		.goods-product-title {
+			margin-bottom: $twentyfive;
+			h1 {
+				font-weight: normal;
+			}
+		}
 		.price {
 			.amount {
-				font-size: $h1-font-size;
+				font-size: $h2-font-size;
 				line-height: 1;
 			}
 		}
