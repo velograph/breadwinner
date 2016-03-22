@@ -8,7 +8,7 @@
  */
 ?>
 
-	<?php if( is_page('checkout') || is_page('cart') ) : ?>
+	<?php if( is_page('checkout') || is_page('cart') || is_product() ) : ?>
 	<!-- Do Nothing -->
 	<?php else: ?>
 

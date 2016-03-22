@@ -608,6 +608,70 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	</div>
 
+<?php elseif( has_term('invoice','product_cat') ) : ?>
+
+	<div class="invoice">
+
+		<?php
+			/**
+			 * woocommerce_before_main_content hook.
+			 *
+			 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+			 * @hooked woocommerce_breadcrumb - 20
+			 */
+			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+			do_action( 'woocommerce_before_main_content' );
+		?>
+
+		<?php while ( have_posts() ) : the_post(); ?>
+			<div class="image">
+				<div class="download-invoice">
+					<a href="<?php the_field('pdf'); ?>">
+						<img src="http://breadwinnercycles.com/wp-content/uploads/2016/03/document.png" />
+						<h6>PDF Invoice</h6>
+					</a>
+				</div>
+				<hr />
+				<div class="product-content">
+					<?php the_content(); ?>
+				</div>
+			</div>
+
+			<div class="summary">
+				<div class="goods-product-title">
+					<h1><?php the_title(); ?></h1>
+				</div>
+
+				<?php
+					/**
+					 * woocommerce_single_product_summary hook
+					 *
+					 * @hooked woocommerce_template_single_title - 5
+					 * @hooked woocommerce_template_single_rating - 10
+					 * @hooked woocommerce_template_single_price - 10
+					 * @hooked woocommerce_template_single_excerpt - 20
+					 * @hooked woocommerce_template_single_add_to_cart - 30
+					 * @hooked woocommerce_template_single_meta - 40
+					 * @hooked woocommerce_template_single_sharing - 50
+					 */
+					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+					do_action( 'woocommerce_single_product_summary' );
+				?>
+			</div>
+		<?php endwhile; ?>
+
+		<?php
+			/**
+			 * woocommerce_after_main_content hook
+			 *
+			 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+			 */
+			do_action( 'woocommerce_after_main_content' );
+		?>
+
+	</div>
+
 <?php else: ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
