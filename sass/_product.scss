@@ -357,6 +357,9 @@
 		@include media( $large-screen ) {
 			@include span-columns(6);
 		}
+		.quantity {
+			display: none;
+		}
 	}
 }
 

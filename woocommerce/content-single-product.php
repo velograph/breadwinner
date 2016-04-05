@@ -624,18 +624,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
-			<div class="image">
-				<div class="download-invoice">
-					<a href="<?php the_field('pdf'); ?>">
-						<img src="http://breadwinnercycles.com/wp-content/uploads/2016/03/document.png" />
-						<h6>PDF Invoice</h6>
-					</a>
-				</div>
-				<hr />
-				<div class="product-content">
-					<?php the_content(); ?>
-				</div>
-			</div>
 
 			<div class="summary">
 				<div class="goods-product-title">
@@ -658,7 +646,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 					remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 					do_action( 'woocommerce_single_product_summary' );
 				?>
+				<script>
+				jQuery(document).ready(function(){
+					jQuery('.invoice .single_add_to_cart_button').html('Pay Invoice');
+				});
+				</script>
 			</div>
+
+			<div class="image">
+				<div class="download-invoice">
+					<a href="<?php the_field('pdf'); ?>">
+						<img src="http://breadwinnercycles.com/wp-content/uploads/2016/03/document.png" />
+						<h6>PDF Invoice</h6>
+					</a>
+				</div>
+				<hr />
+				<div class="product-content">
+					<?php the_content(); ?>
+				</div>
+			</div>
+
 		<?php endwhile; ?>
 
 		<?php

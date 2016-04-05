@@ -70,6 +70,87 @@ get_header(); ?>
 					<div class="full-width-content">
 						<h2><?php the_title(); ?></h2>
 						<?php the_content(); ?>
+
+						<script>
+							jQuery(document).ready(function(){
+								jQuery('.blog-gallery').slickLightbox({
+									caption: 'my-caption',
+								});
+
+								jQuery('.blog-gallery').slick({
+								  slidesToShow: 1,
+								  slidesToScroll: 1,
+								  accessibility: true,
+								  arrows: true,
+								  asNavFor: '.blog-gallery-thumbs',
+								  lazyLoad: 'progressive',
+								});
+
+								jQuery('.blog-gallery-thumbs').slick({
+								  slidesToShow: 'all',
+								  slidesToScroll: 1,
+								  accessibility: true,
+								  arrows: false,
+								  asNavFor: '.blog-gallery',
+								  dots: false,
+								  focusOnSelect: true
+								});
+							});
+						</script>
+
+						<?php if( get_field('gallery') ) : ?>
+							<div class="gallery-container">
+								<div class="blog-gallery">
+									<?php
+
+									$images = get_field('gallery');
+
+									if( $images ): ?>
+										<?php foreach( $images as $image ): ?>
+
+											<div class="slide">
+												<a data-my-caption="<?php echo $image['caption']; ?>" href="<?php echo $image[url]; ?>">
+													<picture>
+														<!--[if IE 9]><video style="display: none"><![endif]-->
+														<source
+															srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+															media="(max-width: 500px)" />
+														<source
+															srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+															media="(max-width: 860px)" />
+														<source
+															srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+															media="(min-width: 861px)" />
+														<!--[if IE 9]></video><![endif]-->
+														<img data-lazy="<?php echo $image[0]; ?>">
+													</picture>
+												</a>
+												<em><?php echo $image['caption']; ?></em>
+											</div>
+
+										<?php endforeach; ?>
+									<?php endif; ?>
+								</div>
+
+								<div class="blog-gallery-thumbs">
+									<?php
+
+									$images = get_field('gallery');
+
+									if( $images ): ?>
+										<?php foreach( $images as $image ): ?>
+
+											<div class="slide">
+												<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+											</div>
+
+										<?php endforeach; ?>
+									<?php endif; ?>
+
+								<?php endif; ?>
+							</div>
+						</div>
+
 						<hr />
 						<?php the_tags(); ?>
 						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>

@@ -76,6 +76,64 @@ get_header(); ?>
 						<div class="full-width-content">
 							<h2><?php the_title(); ?></h2>
 							<?php the_content(); ?>
+
+							<script>
+								jQuery(document).ready(function(){
+									jQuery('.blog-gallery').slickLightbox({
+										caption: 'my-caption',
+									});
+
+									jQuery('.blog-gallery').slick({
+										arrows: true,
+										dots: false,
+										autoplay: false,
+										autoplaySpeed: 3000,
+										pauseOnHover: true,
+										accessibility: false,
+										mobileFirst: false,
+										lazyLoad: 'progressive',
+									});
+								});
+							</script>
+
+							<?php if( get_field('gallery') ) : ?>
+								<div class="blog-gallery">
+									<?php
+
+									$images = get_field('gallery');
+
+									if( $images ): ?>
+										<?php foreach( $images as $image ): ?>
+
+											<div class="slide">
+												<a data-my-caption="<?php echo $image['caption']; ?>" href="<?php echo $image[url]; ?>">
+													<picture>
+														<!--[if IE 9]><video style="display: none"><![endif]-->
+														<source
+															srcset="<?php echo $image['sizes']['full-width-slider-mobile']; ?>"
+															media="(max-width: 500px)" />
+														<source
+															srcset="<?php echo $image['sizes']['full-width-slider-tablet']; ?>"
+															media="(max-width: 860px)" />
+														<source
+															srcset="<?php echo $image['sizes']['full-width-slider-desktop']; ?>"
+															media="(max-width: 1180px)" />
+														<source
+															srcset="<?php echo $image['sizes']['full-width-slider-retina']; ?>"
+															media="(min-width: 1181px)" />
+														<!--[if IE 9]></video><![endif]-->
+														<img data-lazy="<?php echo $image[0]; ?>">
+													</picture>
+												</a>
+												<em><?php echo $image['caption']; ?></em>
+											</div>
+
+										<?php endforeach; ?>
+									<?php endif; ?>
+								</div>
+
+							<?php endif; ?>
+
 							<hr />
 							<?php the_tags(); ?>
 							<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>

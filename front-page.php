@@ -26,31 +26,6 @@ get_header(); ?>
 		    lazyLoad: 'ondemand',
 		});
 
-		// jQuery('.highlight-gallery').slick({
-		// 	arrows: true,
-		// 	dots: false,
-		// 	autoplay: false,
-		// 	autoplaySpeed: 3000,
-		// 	accessibility: false,
-		// 	mobileFirst: false,
-		// 	pauseOnHover: true,
-		//     lazyLoad: 'ondemand',
-		// 	responsive: [
-		// 		{
-		// 			breakpoint: 767,
-		// 			settings: {
-		// 				slidesToShow: 1,
-		// 			}
-		// 		},
-		// 		{
-		// 			breakpoint: 5000,
-		// 			settings: {
-		// 				slidesToShow: 3,
-		// 			}
-		// 		}
-		// 	]
-		// });
-
 	});
 </script>
 

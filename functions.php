@@ -148,7 +148,7 @@ add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
 add_image_size( 'full-width-slider-mobile', '480', '320', 'true' );
 add_image_size( 'full-width-slider-tablet', '768', '512', 'true' );
-add_image_size( 'full-width-slider-desktop', '1280', '853', 'true' );
+add_image_size( 'full-width-slider-desktop', '1280', '427', 'true' );
 add_image_size( 'full-width-slider-retina', '2400', '1600', 'true' );
 
 add_image_size( 'banner-mobile', '480', '240', 'true' );

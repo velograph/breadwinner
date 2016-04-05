@@ -30,6 +30,19 @@
 		.content {
 			@include span-columns(4);
 		}
+		figure, img {
+			margin: 0 0 $fifty;
+			width: 100% !important;
+			.wp-caption-text {
+				font-size: 16px;
+				font-style: italic;
+			}
+		}
+		figure {
+			img {
+				margin-bottom: 0;
+			}
+		}
 		.image {
 			@include span-columns(8);
 			border: 1px solid $dark_gray;
@@ -41,11 +54,23 @@
 		.full-width-content {
 			@include span-columns(12);
 		}
-		.gallery {
+		.gallery-container {
 			@include row();
-			.gallery-item {
-				@include span-columns(4);
-				@include omega(3n);
+			.blog-gallery {
+				@include span-columns(9);
+				img {
+					margin-bottom: $five;
+				}
+			}
+			.blog-gallery-thumbs {
+				@include span-columns(3);
+				.slide {
+					@include span-columns(3);
+					@include omega(4n);
+					img {
+						margin-bottom: 2.35765%;
+					}
+				}
 			}
 		}
 	}
