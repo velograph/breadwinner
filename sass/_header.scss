@@ -103,7 +103,9 @@
 					a {
 						color: $white;
 						font-weight: 700;
+						position: relative;
 						text-transform: uppercase;
+						top: -3px;
 						@include media( $medium-screen ) {
 							font-size: 16px;
 						}
@@ -112,6 +114,29 @@
 						}
 						&:hover {
 							color: $light_blue;
+						}
+					}
+					.sub-menu {
+						background: $dark_blue;
+						display: none;
+						position: absolute;
+						z-index: 9;
+						li {
+							border: 0;
+							padding: $five $ten;
+							width: 125px;
+							a {
+								font-weight: 400;
+								text-transform: none;
+							}
+						}
+					}
+					&:hover {
+						.sub-menu {
+							display: block;
+							li {
+								display: block;
+							}
 						}
 					}
 				}

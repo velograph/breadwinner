@@ -45,6 +45,11 @@ get_header(); ?>
 			<div class="post">
 
 				<?php if( has_post_format('image', $post->ID) ) : ?>
+
+					<div class="image">
+						<?php the_post_thumbnail('full'); ?>
+					</div>
+
 					<div class="content">
 						<?php the_title(); ?>
 						<hr />
@@ -52,10 +57,12 @@ get_header(); ?>
 						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
 					</div>
 
+				<?php elseif( has_post_format('aside', $post->ID) ) : ?>
+
 					<div class="image">
 						<?php the_post_thumbnail('full'); ?>
 					</div>
-				<?php elseif( has_post_format('aside', $post->ID) ) : ?>
+
 					<div class="content">
 						<?php the_content(); ?>
 						<hr />
@@ -63,9 +70,6 @@ get_header(); ?>
 						<h6>Posted on: <?php the_time('F jS, Y'); ?></h6>
 					</div>
 
-					<div class="image">
-						<?php the_post_thumbnail('full'); ?>
-					</div>
 				<?php else: ?>
 					<div class="full-width-content">
 						<h2><?php the_title(); ?></h2>
@@ -147,9 +151,9 @@ get_header(); ?>
 										<?php endforeach; ?>
 									<?php endif; ?>
 
-								<?php endif; ?>
+								</div>
 							</div>
-						</div>
+						<?php endif; ?>
 
 						<hr />
 						<?php the_tags(); ?>
@@ -164,8 +168,8 @@ get_header(); ?>
 	</div>
 
 	<div class="post-navigation">
-		<div class="older"><?php next_posts_link( '&laquo; Older', '' ); ?></div>
-		<div class="newer"><?php previous_posts_link( 'Newer &raquo;' ); ?></div>
+		<div class="older"><h3><?php next_post_link('%link', '&laquo; Older', TRUE); ?></h3></div>
+		<div class="newer"><h3><?php previous_post_link('%link', 'Newer &raquo;', TRUE); ?></h3></div>
 	</div>
 
 <?php else : ?>

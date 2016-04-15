@@ -1,21 +1,25 @@
 .archive-posts {
 	.post {
+		.full-width-content {
+			img {
+				margin-bottom: 0;
+			}
+		}
 		.image {
-			@include transition(background 0.2s linear);
-			background: $white;
+			// @include transition(opacity 0.2s ease-in-out);
+			// background: $white;
 			a {
 				img {
-					opacity: 1;
-					@include transition(opacity 0.2s linear);
+					// opacity: 1;
+					// @include transition(opacity 0.2s ease-in-out);
 				}
 				&:hover {
 					img {
-						opacity: .5;
+						// opacity: .5;
 					}
 				}
 			}
 			&:hover {
-				background: $black;
 			}
 		}
 	}
@@ -24,11 +28,18 @@
 .blog-posts {
 	@include outer-container;
 	.post {
-		@include span-columns(8);
-		@include shift(2);
+		@include span-columns(10);
+		@include shift(1);
 		margin-bottom: $hundred;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 		.content {
-			@include span-columns(4);
+			margin-bottom: $twentyfive;
+			@include media( $large-screen ) {
+				@include span-columns(4);
+				margin-bottom: 0;
+			}
 		}
 		figure, img {
 			margin: 0 0 $fifty;
@@ -44,9 +55,10 @@
 			}
 		}
 		.image {
-			@include span-columns(8);
-			border: 1px solid $dark_gray;
-			padding: $fifteen;
+			@include row();
+			@include media( $large-screen ) {
+				@include span-columns(8);
+			}
 			img {
 				float: left;
 			}
@@ -76,6 +88,23 @@
 	}
 }
 
+.single-post {
+	.full-width-content {
+		img {
+			margin-bottom: 0;
+		}
+	}
+}
+
 .post-navigation {
 	@include outer-container;
+	margin-bottom: $hundred;
+	.older {
+		@include span-columns(6);
+		text-align: center;
+	}
+	.newer {
+		@include span-columns(6);
+		text-align: center;
+	}
 }

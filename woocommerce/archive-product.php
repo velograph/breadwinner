@@ -108,43 +108,48 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 			</div>
 
 			<div class="portal-container">
-				<?php while ( have_posts() ) : the_post(); ?>
 
-					<div class="portal" id="post-<?php the_ID(); ?>">
-						<a href="<?php the_permalink(); ?>">
-							<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
-							<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
-							<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
-							<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
+				<?php
 
-							<picture>
-								<!--[if IE 9]><video style="display: none"><![endif]-->
-								<source
-									srcset="<?php echo $mobile_page_banner[0]; ?>"
-									media="(max-width: 500px)" />
-								<source
-									srcset="<?php echo $tablet_page_banner[0]; ?>"
-									media="(max-width: 860px)" />
-								<source
-									srcset="<?php echo $desktop_page_banner[0]; ?>"
-									media="(max-width: 1180px)" />
-								<source
-									srcset="<?php echo $retina_page_banner[0]; ?>"
-									media="(min-width: 1181px)" />
-								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $desktop_page_banner[0]; ?>">
-							</picture>
-							<div class="overlay">&nbsp;</div>
-							<div class="tagline">
-								<h2><?php the_excerpt(); ?></h2>
-							</div>
-							<h6 class="title">
-								<?php the_title(); ?>
-							</h6>
-						</a>
-					</div>
+					$args = array(
+						'post_type' => 'product',
+						'tax_query' => array(
+							relation => 'AND',
+							array(
+								'taxonomy' => 'product_cat',
+								'field' => 'slug',
+								'terms' => 'bikes',
+							),
+							array(
+								'taxonomy' => 'product_cat',
+								'field' => 'slug',
+								'terms' => $term->name,
+							),
+						),
+					);
+					$query = new WP_Query($args);
 
-				<?php endwhile; // end of the loop. ?>
+					if($query->have_posts()) : ?>
+
+					<?php while($query->have_posts()) : ?>
+
+						<?php $query->the_post(); ?>
+
+						<div class="portal">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail(); ?>
+								<div class="overlay">&nbsp;</div>
+								<div class="tagline">
+									<h2><?php the_excerpt(); ?></h2>
+								</div>
+								<h6 class="title"><?php the_title() ?></h6>
+							</a>
+						</div>
+
+					<?php endwhile;
+					wp_reset_query(); ?>
+
+				<?php endif; ?>
 
 			</div>
 
@@ -251,13 +256,13 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 		<!-- echo 'has parent, no child';
 		Regular loop here -->
 
-		<div class="section-header">
-
-			<h4><?php echo $term->name; ?></h4>
-
-		</div>
-
 		<div class="goods-archive">
+
+			<div class="section-header">
+
+				<h4><?php echo $term->name; ?></h4>
+
+			</div>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
@@ -321,7 +326,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 			);
 			$query = new WP_Query( $args ); ?>
 
-			<div class="section-header">
+			<div class="goods-archive-section-header section-header">
 
 				<h4>
 					<a href="/product-category/<?php echo $current_term->slug; ?>/<?php echo $term->slug; ?>">

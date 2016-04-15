@@ -24,8 +24,8 @@ get_header(); ?>
 		<div class="four-oh-four large-open-section-container">
 			<div class="large-open-section">
 				<h1>404</h1>
-				<p><?php _e( 'Sorry, but we can not find that page. Maybe you should try searching for a new keyword.', 'Breadwinner Cycles' ); ?></p>
-				<?php get_search_form(); ?>
+				<p><?php _e( 'That page doesn\'t exist!', 'Breadwinner Cycles' ); ?></p>
+				<a href="/product-category/bikes/" class="button">View the Breadwinner Lineup</a>
 			</div>
 		</div>
 

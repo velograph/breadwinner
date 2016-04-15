@@ -34,7 +34,7 @@ get_header(); ?>
 						</a>
 					</div>
 					<div class="social-media-link instagram">
-						<a href="instagram.com/breadwinnercycles/" target="_blank">
+						<a href="http://instagram.com/breadwinnercycles/" target="_blank">
 							<svg viewBox="0 0 18 18">
 							    <g id="Page-1" stroke="none" stroke-width="1"  fill-rule="evenodd" sketch:type="MSPage">
 							        <g id="instagram" sketch:type="MSLayerGroup">

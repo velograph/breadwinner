@@ -32,6 +32,8 @@ get_header(); ?>
 					'terms' => array(
 						'model-components',
 						'models',
+						'deposit',
+						'components'
 					),
 					'operator' => 'NOT IN'
 				),

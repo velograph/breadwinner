@@ -5,6 +5,10 @@
 		margin-top: $hundred;
 		@include outer-container;
 	}
+	.cart-empty,
+	.return-to-shop {
+		text-align: center;
+	}
 }
 
 .woocommerce-account {

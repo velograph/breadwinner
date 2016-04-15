@@ -104,6 +104,8 @@ function breadwinner_scripts() {
 
 	wp_enqueue_script( 'breadwinner-matchHeight', get_template_directory_uri() . '/js/matchHeight.min.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'breadwinner-scrollTo', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array(), '20130115', true );
+
 	wp_enqueue_script( 'breadwinner-slick', get_template_directory_uri() . '/js/slick.min.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'breadwinner-slickLightbox', get_template_directory_uri() . '/js/slick-lightbox.js', array(), '20130115', true );
@@ -149,7 +151,8 @@ add_image_size( 'portal-retina', '2400', '1800', 'true' );
 add_image_size( 'full-width-slider-mobile', '480', '320', 'true' );
 add_image_size( 'full-width-slider-tablet', '768', '512', 'true' );
 add_image_size( 'full-width-slider-desktop', '1280', '427', 'true' );
-add_image_size( 'full-width-slider-retina', '2400', '1600', 'true' );
+add_image_size( 'full-width-slider-retina', '2400', '800', 'true' );
+add_image_size( 'single-bike-slider-retina', '2400', '1600', 'true' );
 
 add_image_size( 'banner-mobile', '480', '240', 'true' );
 add_image_size( 'banner-desktop', '1200', '400', 'true' );

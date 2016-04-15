@@ -66,6 +66,9 @@ body {
 				@include shift(1);
 				margin-bottom: 0;
 			}
+			.sub-menu {
+				display: none;
+			}
 		}
 		.utility-navigation {
 			@include span-columns(6);

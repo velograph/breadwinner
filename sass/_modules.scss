@@ -115,6 +115,73 @@
 	}
 }
 
+.description-call-to-action {
+	@include outer-container;
+	.title {
+		h2 {
+			margin: 0 0 $ten 8.5298%;
+			@include media( $large-screen ) {
+				margin: 0 0 $ten $twenty;
+			}
+		}
+	}
+	.description {
+		@include span-columns(10);
+		@include shift(1);
+		background: $dark_blue;
+		color: $white;
+		margin-bottom: $twentyfive;
+		padding: $ten $twenty $twenty $twenty;
+		@include media( $large-screen ) {
+			@include span-columns(7);
+			@include shift(0);
+		}
+		h3 {
+			margin-bottom: $ten;
+		}
+		p {
+			margin-bottom: 0;
+		}
+		.pricing {
+			text-transform: uppercase;
+			@include media( $large-screen ) {
+				.frame-price {
+					float: left;
+				}
+				.complete-price {
+					float: right;
+				}
+			}
+			.price {
+				font-weight: 700;
+			}
+		}
+	}
+	.call-to-action {
+		@include span-columns(10);
+		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(1);
+		}
+		h3,
+		.cart {
+			text-align: center;
+		}
+		h4 {
+			font-weight: 400;
+			margin-bottom: $twentyfive;
+		}
+		.deposit-form {
+			margin-bottom: 11px;
+			.price,
+			.quantity {
+				display: none;
+			}
+		}
+	}
+}
+
 .page-template-story-php,
 .page-template-process-php {
 	.large-open-section-container {
@@ -154,7 +221,7 @@
 
 .section-header {
 	@include outer-container;
-	margin-top: $hundred;
+	margin-top: $fifty;
 	h4 {
 		border-bottom: 1px solid $black;
 		margin-bottom: $twentyfive;
@@ -178,7 +245,7 @@
 
 .image-with-content {
 	@include outer-container;
-	margin-bottom: $hundred;
+	margin-bottom: $fifty;
 	.image {
 		@include span-columns(10);
 		@include shift(1);
@@ -220,16 +287,13 @@
 .large-button {
 	@include outer-container;
 	text-align: center;
+	.separator {
+		padding: 0 $ten;
+	}
 	.button {
 		display: inline-block;
 		font-size: 18px;
 		margin-bottom: $hundred;
-		// @include span-columns(4);
-		// @include shift(4);
-		// @include media( $large-screen ) {
-		// 	@include span-columns(3);
-		// 	@include shift(4);
-		// }
 	}
 }
 
@@ -455,7 +519,7 @@
 
 .image-and-process {
 	@include outer-container;
-	margin-bottom: $hundred;
+	margin-bottom: $fifty;
 	.image {
 		@include row();
 		margin-bottom: $twentyfive;
@@ -505,10 +569,12 @@
 	}
 }
 
-.bike-archive,
-.products {
+.bike-archive {
 	@include outer-container;
 	margin-bottom: $hundred;
+	.section-header:first-of-type {
+		margin-top: 0;
+	}
 	.product,
 	.portal {
 		@include span-columns(12);
@@ -547,6 +613,10 @@
 			@include omega(3n);
 		}
 	}
+}
+
+.goods-archive-section-header {
+	margin-top: 0;
 }
 
 .bike-archive,
@@ -610,7 +680,7 @@
 }
 
 .highlight-gallery {
-	margin-bottom: $hundred;
+	margin-bottom: $fifty;
 	.slick-next {
 		@include media( $large-screen ) {
 			right: $twentyfive;

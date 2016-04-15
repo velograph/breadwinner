@@ -6,9 +6,13 @@
 	}
 }
 
+.single-product {
+	.woocommerce-breadcrumb {
+		margin-bottom: $fifty;
+	}
+}
 .woocommerce-breadcrumb {
 	@include outer-container;
-	margin-bottom: $fifty;
 	padding: $ten;
 	@include media( $large-screen ) {
 		padding: $ten 0;
@@ -120,11 +124,12 @@
 				}
 			}
 			[data-nav_title="Frame"] {
-				.component {
-					.details {
-						float: none;
-						padding: 0;
-					}
+				h4.composited_product_title {
+					visibility: hidden;
+				}
+				.details {
+					float: none;
+					padding: 0;
 				}
 				.bundled_product {
 					@include span-columns(4);
@@ -197,7 +202,12 @@
 			}
 			[data-nav_title="Frame"] {
 				.component_options_select {
-					width: 75%;
+					font-size: 12px;
+					width: 100%;
+					@include media( $large-screen ) {
+						font-size: 16px;
+						width: 75%;
+					}
 				}
 			}
 			[data-nav_title="Review Configuration"] {
@@ -262,13 +272,6 @@
 									}
 								}
 							}
-							&:nth-child(2) {
-								.summary_element_price {
-									display: none;
-								}
-								.content_bundled_product_title {
-								}
-							}
 						}
 					}
 				}
@@ -311,7 +314,7 @@
 	@include outer-container;
 	.current-price {
 		@include media( $large-screen ) {
-			@include span-columns(6);
+			@include span-columns(5);
 		}
 		h4 {
 			color: $light_blue;
@@ -319,7 +322,7 @@
 	}
 	.user-choices {
 		@include media( $large-screen ) {
-			@include span-columns(6);
+			@include span-columns(7);
 		}
 		.drivetrain,
 		.cockpit,
@@ -427,6 +430,9 @@
 					border: 0;
 					select {
 						margin-bottom: 0;
+					}
+					a {
+						float: right;
 					}
 				}
 			}

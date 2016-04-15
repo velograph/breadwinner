@@ -101,6 +101,11 @@ body {
 
 .four-oh-four {
 	padding: $hundred 0 $fifty;
+	a.button {
+		left: 50%;
+		position: absolute;
+		@include transform(translateX(-50%));
+	}
 	h1, p {
 		text-align: center;
 	}
@@ -115,8 +120,8 @@ body {
 	.page-content {
 		@include span-columns(6);
 		@include shift(3);
-		margin-bottom: $hundred;
-		margin-top: $hundred;
+		margin-bottom: $fifty;
+		margin-top: $fifty;
 		text-align: center;
 		h1 {
 			margin-bottom: $twentyfive;

@@ -204,6 +204,8 @@ get_header(); ?>
 			<div class="large-button">
 
 				<a href="/product-category/bikes/" class="button">View the Breadwinner Lineup</a>
+				<span class="separator">or</span>
+				<a href="/contact" class="button">Contact Us</a>
 
 			</div>
 
